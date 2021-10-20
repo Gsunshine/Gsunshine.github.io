@@ -12,10 +12,9 @@ Hi! I am a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), Sc
 
 **I am actively looking for Ph.D. position this year!**
 
-Research
----------
+Publications
+======
 
-# Publications
 - On Training Implicit Models \
   **Zhengyang Geng***, Xin-Yu Zhang*, Shaojie Bai, Yisen Wang, Zhouchen Lin
   (\*equal contribution) \
