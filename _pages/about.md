@@ -15,14 +15,14 @@ Hi! I am a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), Sc
 Research
 ---------
 
-I have eclectic interests in machine learning and deep learning, especially the dynamics in deep learning and the dynamics of deep learning. I believe that structural decomposition, i.e., disentanglement, is a key to understanding the emergence of intelligence, while it can be elegantly formulated and achieved by the dynamics.
+I have eclectic interests in machine learning and deep learning, especially the dynamics in deep learning and the dynamics of deep learning. I believe that structured decomposition, i.e., disentanglement, is a key to understanding the emergence of intelligence, while it can be elegantly formulated and achieved by the dynamics.
 
 - For the dynamics in deep learning, I study differentiable programming, nested optimization, and implicit models as the construction principle in neural networks.
   - This is the "forward" pass.
-- For the dynamics of deep learning, I try to understand the training dynamics of neural networks, especially the gradient issue when the networks are constructed by the dynamics in deep learning. I am fascinated by their landscape, including but not limited to the loss landscape, Jacobian's spectral radius landscape, and Hessian's condition number landscape, etc.
+- For the dynamics of deep learning, I try to understand the training dynamics of neural networks, especially the gradient issue when the networks are constructed by the dynamics in deep learning. I am fascinated by their landscape, including but not limited to the loss landscape, Jacobian's spectral radius landscape, and Hessian's condition number landscape, etc. A strong perception drives me to believe that many problems in model design can be attributed to training.
   - This is the "backward" pass.
 
-I also have strong interests in AI for sciences, especially genetics.
+I am also interested in developing principled learning methods for scientific problems through the dynamics.
 
 Publications
 ---------
