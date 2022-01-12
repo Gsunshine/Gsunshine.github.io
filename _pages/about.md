@@ -31,12 +31,12 @@ Publications
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
   (\*equal contribution) \
   In *Neural Information Processing Systems (NeurIPS) 2021* \
-  [[BibTex]](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib) [[PDF]](https://arxiv.org/pdf/2111.05177.pdf) [[Code]](https://github.com/Gsunshine/phantom_grad) [[Slides]](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf) [[Poster]](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)] [[PDF](https://arxiv.org/pdf/2111.05177.pdf) [[Code]](https://github.com/Gsunshine/phantom_grad)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)]
 
 - Residual Relaxation for Multi-view Representation Learning \
   Yifei Wang, **Zhengyang Geng**, Feng Jiang, Chuming Li, Yisen Wang, Jiansheng Yang, Zhouchen Lin. \
   In *Neural Information Processing Systems (NeurIPS) 2021* \
-  [[BibTex]](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/prelax.bib) [[PDF]](https://arxiv.org/pdf/2110.15348.pdf) [Code] [[Slides]](https://yifeiwang77.github.io/files/slides/NeurIPS2021_Prelax_slides.pdf) 
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/prelax.bib)] [[PDF](https://arxiv.org/pdf/2110.15348.pdf)] [Code] [[Slides](https://yifeiwang77.github.io/files/slides/NeurIPS2021_Prelax_slides.pdf)] 
 
 - Is Attention Better Than Matrix Decomposition? \
   **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, Zhouchen Lin.
