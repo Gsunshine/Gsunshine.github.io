@@ -8,9 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), School of AI, Peking University, working with Prof. [Zhouchen Lin](https://zhouchenlin.github.io/).
-
-**I am actively looking for Ph.D. position this year!**
+Hi! I'm an incoming CS Ph.D. student at [LocusLab](https://github.com/locuslab) of CMU with Prof. [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), School of AI, Peking University, working with Prof. [Zhouchen Lin](https://zhouchenlin.github.io/).
 
 Research
 ---------
@@ -27,11 +25,17 @@ I am also interested in developing principled learning methods for scientific pr
 Publications
 ---------
 
+- Deep Equilibrium Optical Flow Estimation \
+  Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
+  (\*equal contribution) \
+  In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022* \
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] [[PDF]()] [[Code](https://github.com/locuslab/deq-flow)]
+
 - On Training Implicit Models \
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
   (\*equal contribution) \
   In *Neural Information Processing Systems (NeurIPS) 2021* \
-    [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)] [[PDF](https://arxiv.org/pdf/2111.05177.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)]
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)] [[PDF](https://arxiv.org/pdf/2111.05177.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)]
 
 - Residual Relaxation for Multi-view Representation Learning \
   Yifei Wang, **Zhengyang Geng**, Feng Jiang, Chuming Li, Yisen Wang, Jiansheng Yang, Zhouchen Lin. \
@@ -42,4 +46,5 @@ Publications
   **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, Zhouchen Lin.
   (\*equal contribution) \
   In *International Conference on Learning Representations (ICLR) 2021*, **<font color='orange'>top 3%</font>**. \
-  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] [[PDF](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster]](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] [[PDF](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)]
+  
