@@ -29,7 +29,7 @@ Publications
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
   (\*equal contribution) \
   In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022* \
-  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] [[PDF]()] [[Code](https://github.com/locuslab/deq-flow)]
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] [[PDF](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)]
 
 - On Training Implicit Models \
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
