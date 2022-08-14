@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm an incoming CS Ph.D. student at [LocusLab](https://github.com/locuslab) of CMU with Prof. [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), School of AI, Peking University, working with Prof. [Zhouchen Lin](https://zhouchenlin.github.io/).
+Hi! I'm a CS Ph.D. student at [LocusLab](https://github.com/locuslab) of CMU with Prof. [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), School of AI, Peking University, working with Prof. [Zhouchen Lin](https://zhouchenlin.github.io/).
 
 Research
 ---------
@@ -24,6 +24,11 @@ I am also interested in developing principled learning methods for scientific pr
 
 Publications
 ---------
+
+- Eliminating Gradient Conflict in Reference-based Line-art Colorization \
+  Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, Yibo Yang \
+  In *Proceedings of European Conference on Computer Vision (ECCV) 2022* \
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/sga.bib)] [[PDF](https://arxiv.org/abs/2207.06095)] [[Code](https://github.com/kunkun0w0/SGA)]
 
 - Deep Equilibrium Optical Flow Estimation \
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
