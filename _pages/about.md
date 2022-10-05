@@ -17,13 +17,18 @@ I have eclectic interests in machine learning and deep learning, especially the 
 
 - For the dynamics in deep learning, I study differentiable programming, nested optimization, and implicit models as the construction principle in neural networks.
   - This is the "forward" pass.
-- For the dynamics of deep learning, I try to understand the training dynamics of neural networks, especially the gradient issue when the networks are constructed by the dynamics. I am fascinated by their landscape, including but not limited to the loss landscape, Jacobian's spectral radius landscape, etc. A strong perception drives me to believe that many problems in model design can be attributed to training.
+- For the dynamics of deep learning, I try to understand the training dynamics of neural networks, especially the gradient issue when the networks are constructed by the dynamics. I am fascinated by their landscape. A strong perception drives me to believe that many problems in model design can be attributed to training.
   - This is the "backward" pass.
 
 I am also interested in developing principled learning methods for scientific problems through the dynamics.
 
 Publications
 ---------
+
+- Deep Equilibrium Approaches To Diffusion Models \
+  In *Neural Information Processing Systems (NeurIPS) 2022* \
+  Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] [PDF] [Code]
 
 - Eliminating Gradient Conflict in Reference-based Line-art Colorization \
   Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, Yibo Yang \
