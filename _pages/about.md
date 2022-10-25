@@ -28,7 +28,7 @@ Publications
 - Deep Equilibrium Approaches To Diffusion Models \
   In *Neural Information Processing Systems (NeurIPS) 2022* \
   Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
-  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] [PDF] [Code]
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] [[PDF](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)]
 
 - Eliminating Gradient Conflict in Reference-based Line-art Colorization \
   Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, Yibo Yang \
