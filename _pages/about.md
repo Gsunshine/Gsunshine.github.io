@@ -28,45 +28,41 @@ Publications
 - Deep Equilibrium Approaches To Diffusion Models \
   In *Neural Information Processing Systems (NeurIPS) 2022* \
   Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
+  **TL;DR**: Non-autoregressive Diffusion model via a joint lower triangular equilibrium process. \
   [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] [[PDF](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] 
-
-   **TL;DR**: Non-autoregressive Diffusion model via a joint lower triangular equilibrium process.
 
 - Eliminating Gradient Conflict in Reference-based Line-art Colorization \
   Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, Yibo Yang \
   In *Proceedings of European Conference on Computer Vision (ECCV) 2022* \
+  **TL;DR**: Avoid gradient conflicts in attention training. \
   [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/sga.bib)] [[PDF](https://arxiv.org/abs/2207.06095)] [[Code](https://github.com/kunkun0w0/SGA)]
-
-  **TL;DR**: Avoid gradient conflicts in attention training.
 
 - Deep Equilibrium Optical Flow Estimation \
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
   (\*equal contribution) \
   In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022* \
+  **TL;DR**: Equilibrium solving as flow estimation, trained by inexact gradient and fixed point correction. \
   [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] [[PDF](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)]
-
-  **TL;DR**: Equilibrium solving as flow estimation, trained by inexact gradient and fixed point correction.
 
 - On Training Implicit Models \
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
   (\*equal contribution) \
   In *Neural Information Processing Systems (NeurIPS) 2021* \
+  **TL;DR**: Cheap, fast, and stable inexact gradient works as well as exact implicit differentiation. \
   [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)] [[PDF](https://arxiv.org/pdf/2111.05177.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)]
-
-  **TL;DR**: Cheap, fast, and stable inexact gradient works as well as exact implicit differentiation.
 
 - Residual Relaxation for Multi-view Representation Learning \
   Yifei Wang, **Zhengyang Geng**, Feng Jiang, Chuming Li, Yisen Wang, Jiansheng Yang, Zhouchen Lin. \
   In *Neural Information Processing Systems (NeurIPS) 2021* \
+  **TL;DR**: Equivariant contrastive learning replaces invariant contrastive learning. \
   [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/prelax.bib)] [[PDF](https://arxiv.org/pdf/2110.15348.pdf)] [Code] [[Slides](https://yifeiwang77.github.io/files/slides/NeurIPS2021_Prelax_slides.pdf)] 
-
-  **TL;DR**: Equivariant contrastive learning replaces invariant contrastive learning.
 
 - Is Attention Better Than Matrix Decomposition? \
   **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, Zhouchen Lin.
   (\*equal contribution) \
   In *International Conference on Learning Representations (ICLR) 2021*, **<font color='orange'>top 3%</font>**. \
+  **TL;DR**: 1-step gradient trained non-convex matrix recovery as a global context layer. \
   [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] [[PDF](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)]
 
-  **TL;DR**: 1-step gradient trained non-convex matrix recovery as a global context layer.
+  
   
