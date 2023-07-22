@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm a CS Ph.D. student at CMU, advised by [J. Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I am an enthusiast of delicate structures, recognizing and developing structures that self organizes complex systems. Here is my [CV](https://www.overleaf.com/read/dggtmczgrysp). (Welcome to use this template!)
+Hi! I'm a CS Ph.D. student at CMU, advised by [J. Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I am an enthusiast of delicate structures, recognizing and developing structures that self-organize complex systems. Here is my [CV](https://www.overleaf.com/read/dggtmczgrysp). (Welcome to use this template!)
 
 Research
 ---------
