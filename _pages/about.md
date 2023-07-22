@@ -8,28 +8,34 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm a CS Ph.D. student at [LocusLab](https://github.com/locuslab) of CMU with Prof. [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at [ZERO Lab](https://zero-lab-pku.github.io/), School of AI, Peking University, working with Prof. [Zhouchen Lin](https://zhouchenlin.github.io/). Here is my [CV](https://www.overleaf.com/read/dggtmczgrysp). (Welcome to use this template!)
+Hi! I'm a CS Ph.D. student at CMU, advised by [J. Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I am an enthusiast of delicate structures, recognizing and developing structures that self organizes complex systems. Here is my [CV](https://www.overleaf.com/read/dggtmczgrysp). (Welcome to use this template!)
 
 Research
 ---------
 
 I have eclectic interests in machine learning and deep learning, especially the dynamics in deep learning and the dynamics of deep learning. I believe that structured decomposition, i.e., disentanglement, is a key to understanding the emergence of intelligence, while it can be elegantly formulated and achieved by the dynamics.
 
-- For the dynamics in deep learning, I study differentiable programming, nested optimization, and implicit models as the construction principle in neural networks.
+- For the dynamics in deep learning, I study differentiable programming, nested optimization, and fixed point system as the construction principle in neural networks.
   - This is the "forward" pass.
-- For the dynamics of deep learning, I try to understand the training dynamics of neural networks, especially the gradient issue when the networks are constructed by the dynamics. I am fascinated by their landscape. A strong perception drives me to believe that many problems in model design can be attributed to training.
+- For the dynamics of deep learning, I try to understand the training dynamics of neural networks. I am fascinated by their landscape. A strong perception drives me to believe that many problems in model design can be attributed to training.
   - This is the "backward" pass.
 
-I am also interested in developing principled learning methods for scientific problems through the dynamics.
+I am also interested in developing principled learning methods for scientific problems through the structures.
 
 Publications
 ---------
 
+- Equilibrium Image Denoising With Implicit Differentiation \
+  In *IEEE Transactions on Image Processing* \
+  Qi Chen, Yifei Wang, **Zhengyang Geng**, Yisen Wang, Jiansheng Yang, and Zhouchen Lin \
+  **TL;DR**: Equilibrium image denoising with implicit differentiation. \
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/nerd.bib)] [[PDF](https://ieeexplore.ieee.org/abstract/document/100705887)] [Code]
+
 - Deep Equilibrium Approaches To Diffusion Models \
   In *Neural Information Processing Systems (NeurIPS) 2022* \
   Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
-  **TL;DR**: Non-autoregressive Diffusion model via a joint lower triangular equilibrium process. \
-  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] [[PDF](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] 
+  **TL;DR**: Parallel diffusion decoding via a joint lower-triangular equilibrium process. \
+  [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] [[PDF](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)]
 
 - Eliminating Gradient Conflict in Reference-based Line-art Colorization \
   Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, Yibo Yang \
