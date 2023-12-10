@@ -45,7 +45,7 @@ Projects
   [[PDF](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
 
 - <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="https://lh4.googleusercontent.com/n9iy4Rzg9GqerQZBPgI3uK3zEE-ZD3tIjAhu-C72HjwLTpgHZOPACtaYpJxp69wRTSxf-jd6Rx8BE-huIM6V-0LEXGRFimNaXnN6O1DREqtF6P74oLA0eGXCO7IbqrgqRw=w1280" alt="Medusa Logo" width="55">
+    <img src="https://drive.google.com/uc?id=1xm2o4E-7d2Wmv7toMv8f4Gp3a2oBeqJu" alt="Medusa Logo" width="55">
     <div>
       <h3 style="margin-bottom: 5px;margin-top: 5px;">Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads</h3>
       <p style="margin-top: 5px;margin-bottom: 5px"> Tianle Cai*, Yuhong Li*, <strong>Zhengyang Geng</strong>, Hongwu Peng, Tri Dao</p>
