@@ -52,7 +52,6 @@ Projects
     </div>
   </div>
 
-  Tianle Cai\*, Yuhong Li\*, **Zhengyang Geng**, Hongwu Peng, Tri Dao \
   **TL;DR**: Simple LLM inference with multiple decoding heads and self-verification. Lossless 2x acceleration. \
   [[Code](https://github.com/FasterDecoding/Medusa)] [[Blog](https://sites.google.com/view/medusa-llm)]
 
