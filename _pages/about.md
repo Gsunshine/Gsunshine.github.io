@@ -27,11 +27,34 @@ I am also interested in developing principled learning methods for scientific pr
 Projects
 ---------
 
+- <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://drive.google.com/uc?id=1tCXsv0yanvQqncB9ke8x6fCKonu4z4iB" alt="TorchDEQ Logo" width="55">
+    <div>
+      <h3 style="margin-bottom: 5px;margin-top: 5px;">TorchDEQ: A Library for Deep Equilibrium Models</h3>
+      <p style="margin-top: 5px;margin-bottom: 5px"><strong>Zhengyang Geng</strong>, and J. Zico Kolter</p>
+    </div>
+  </div>
+
+  **TL;DR**: Modern Fixed Point Systems using Pytorch. \
+  [[Report](https://arxiv.org/abs/2310.18605)] [[Code](https://github.com/locuslab/get)] [[Colab Tutorial](https://colab.research.google.com/drive/12HiUnde7qLadeZGGtt7FITnSnbUmJr-I?usp=sharing)] [[Doc](https://torchdeq.readthedocs.io/en/latest/get_started.html)] [[DEQ Zoo](https://torchdeq.readthedocs.io/en/latest/deq-zoo/model.html)]
+
 - 1-Step Diffusion Distillation via Deep Equilibrium Models \
   In *Neural Information Processing Systems (NeurIPS) 2023* \
   **Zhengyang Geng**\*, Ashwini Pokle\*, and J. Zico Kolter \
   **TL;DR**: Generative Equilibrium Transformer (GET) as strong 1-step diffusion learner. \
   [[PDF](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
+
+- <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://lh4.googleusercontent.com/n9iy4Rzg9GqerQZBPgI3uK3zEE-ZD3tIjAhu-C72HjwLTpgHZOPACtaYpJxp69wRTSxf-jd6Rx8BE-huIM6V-0LEXGRFimNaXnN6O1DREqtF6P74oLA0eGXCO7IbqrgqRw=w1280" alt="Medusa Logo" width="55">
+    <div>
+      <h3 style="margin-bottom: 5px;margin-top: 5px;">Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads</h3>
+      <p style="margin-top: 5px;margin-bottom: 5px"> Tianle Cai*, Yuhong Li*, <strong>Zhengyang Geng</strong>, Hongwu Peng, Tri Dao</p>
+    </div>
+  </div>
+
+  Tianle Cai\*, Yuhong Li\*, **Zhengyang Geng**, Hongwu Peng, Tri Dao \
+  **TL;DR**: Simple LLM inference with multiple decoding heads and self-verification. Lossless 2x acceleration. \
+  [[Code](https://github.com/FasterDecoding/Medusa)] [[Blog](https://sites.google.com/view/medusa-llm)]
 
 - Equilibrium Image Denoising With Implicit Differentiation \
   In *IEEE Transactions on Image Processing* \
