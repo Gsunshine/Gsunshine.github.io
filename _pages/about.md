@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm a CS Ph.D. student at CMU, advised by [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I also had a wonderful summer at Meta Reality Labs with [Shaojie Bai](https://zicokolter.com/) on generative avatar encoding.
+Hi! I'm a CS Ph.D. student at CMU, advised by [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I also had a wonderful summer at Meta Reality Labs with [Shaojie Bai](https://jerrybai1995.github.io/) on generative avatar encoding.
 
 I am an enthusiast of dynamics, recognizing and developing dynamics that self-organize complex systems. Here is my [CV](https://www.overleaf.com/read/dggtmczgrysp).
 
-Research
+Interests
 ---------
 
 I have eclectic interests in machine learning and deep learning, especially the dynamics in deep learning and the dynamics of deep learning. I believe that structured decomposition, i.e., disentanglement, is a key to understanding the emergence of intelligence, while it can be elegantly formulated and achieved by the dynamics.
@@ -24,11 +24,11 @@ I have eclectic interests in machine learning and deep learning, especially the 
 
 I am also interested in developing principled learning methods for scientific problems through the dynamics.
 
-Projects
+Research
 ---------
 
 - <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="https://drive.google.com/uc?id=1tCXsv0yanvQqncB9ke8x6fCKonu4z4iB" alt="TorchDEQ Logo" width="55">
+    <img src="/images/TorchDEQ_Logo.gif" alt="TorchDEQ Logo" width="55">
     <div>
       <h3 style="margin-bottom: 5px;margin-top: 5px;">TorchDEQ: A Library for Deep Equilibrium Models</h3>
       <p style="margin-top: 5px;margin-bottom: 5px"><strong>Zhengyang Geng</strong>, and J. Zico Kolter</p>
@@ -45,7 +45,7 @@ Projects
   [[PDF](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
 
 - <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="https://drive.google.com/uc?id=1xm2o4E-7d2Wmv7toMv8f4Gp3a2oBeqJu" alt="Medusa Logo" width="55">
+    <img src="https://lh5.googleusercontent.com/raLdydpYW2EslHE6wFU_p-X-GF8r8OAFI2dap6W4pCNYgDLs4-dGqozHyfCwdt_xmkJks7yB29nUJvLfANISoUQqN5Q6gp3d3Mx8pMvsIpgygpC8px_NDAu5rw-AH9wZAg=w1280" alt="Medusa Logo" width="55">
     <div>
       <h3 style="margin-bottom: 5px;margin-top: 5px;">Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads</h3>
       <p style="margin-top: 5px;margin-bottom: 5px"> Tianle Cai*, Yuhong Li*, <strong>Zhengyang Geng</strong>, Hongwu Peng, Tri Dao</p>
