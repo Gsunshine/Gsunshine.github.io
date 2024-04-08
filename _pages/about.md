@@ -27,6 +27,11 @@ I am also interested in developing principled learning methods for scientific pr
 Research
 ---------
 
+- **Consistency Models Made Easy** \
+  **Zhengyang Geng**\*, William Luo, Ashwini Pokle, and J. Zico Kolter \
+  **TL;DR**: Tune your Consistency Models from Diffusion Pretraining. No Teacher :D \
+  [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)] 
+
 - <div style="display: flex; align-items: center; gap: 10px;">
     <img src="/images/TorchDEQ_Logo.gif" alt="TorchDEQ Logo" width="55">
     <div>
