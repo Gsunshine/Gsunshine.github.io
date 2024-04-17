@@ -8,19 +8,17 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm a CS Ph.D. student at CMU, advised by [Zico Kolter](https://zicokolter.com/). 
+Hi! I'm a CS Ph.D. student at CMU advised by [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I also had a wonderful summer at Meta Reality Labs with [Shaojie Bai](https://scholar.google.com/citations?user=DLVP3PcAAAAJ&hl=en) working on generative avatar encoding.
 
 I am an enthusiast of dynamics, recognizing, understanding, and developing dynamics that self-organize complex systems. 
 
 Research
 ---------
 
-I have eclectic interests in machine learning and deep learning, especially the dynamics in deep learning and the dynamics of deep learning. I believe that structured decomposition is key to understanding the emergence of intelligence, which can be elegantly achieved by dynamics.
+I have eclectic interests in machine learning and deep learning, especially when combined with dynamics. I believe that structured decomposition (perception) and reconstruction (generation) are key to understanding the emergence of general intelligence, which dynamics can elegantly achieve.
 
-- For the dynamics in deep learning, I study dynamical systems as the construction method and learning principle in neural networks.
-  - This is the "forward" pass.
-- For the dynamics of deep learning, I pursue a better understanding of neural network training dynamics. I am fascinated by their landscape. A strong belief drives me to investigate the interaction between data/environment, model, and learning dynamics.
-  - This is the "backward" pass.
+- Regarding the "forward" pass, I study dynamical systems as the construction method and learning principle in neural networks.
+- Regarding the "backward" pass, I pursue a better understanding of neural network training dynamics. I am fascinated by their landscape. A strong belief drives me to investigate the interaction between data/env, model, and learning dynamics.
 
 I am also interested in modeling and understanding nature through dynamics. The only constant is change. The invariance under change is truth. :D
 
