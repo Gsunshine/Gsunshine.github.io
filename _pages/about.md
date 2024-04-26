@@ -17,8 +17,8 @@ Research
 
 I have eclectic interests in machine learning and deep learning, especially when combined with dynamics. I believe that structured decomposition (perception) and reconstruction (generation) are key to understanding the emergence of general intelligence, which dynamics can elegantly achieve.
 
-- Regarding the "forward" pass, I study dynamical systems as the construction method and learning principle in neural networks.
-- Regarding the "backward" pass, I pursue a better understanding of neural network training dynamics. I am fascinated by their landscape. A strong belief drives me to investigate the interaction between data/env, model, and learning dynamics.
+- Regarding the "forward" pass, I study **dynamical systems** (fixed point equations, optimization, differential equations, etc) as the construction method and learning principle in neural networks.
+- Regarding the "backward" pass, I pursue a better understanding of neural network **training dynamics**. I am fascinated by their landscape. A strong belief drives me to investigate the interaction between data/env, model, and learning dynamics.
 
 I am also interested in modeling and understanding nature through dynamics. The only constant is change. The invariance under change is truth. :D
 
@@ -60,7 +60,7 @@ Projects
     </div>
   </div>
 
-  **TL;DR**: Simple LLM inference with multiple decoding heads and self-verification. Lossless 2x acceleration. \
+  **TL;DR**: Simple LLM acceleration with multiple decoding heads and self-verification. \
   [[Report](https://arxiv.org/abs/2401.10774)] [[Blog](https://sites.google.com/view/medusa-llm)] [[Code](https://github.com/FasterDecoding/Medusa)] 
 
 - Equilibrium Image Denoising With Implicit Differentiation \
@@ -72,7 +72,7 @@ Projects
 - Deep Equilibrium Approaches To Diffusion Models \
   In *Neural Information Processing Systems (NeurIPS) 2022* \
   Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
-  **TL;DR**: Parallel diffusion decoding via a joint lower-triangular equilibrium process. \
+  **TL;DR**: Parallel diffusion decoding via fixed point equations. \
   [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
 
 - Eliminating Gradient Conflict in Reference-based Line-art Colorization \
@@ -85,14 +85,15 @@ Projects
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
   (\*equal contribution) \
   In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022* \
-  **TL;DR**: Equilibrium solving as flow estimation, trained by inexact gradient and fixed point correction. \
+  **TL;DR**: Equilibrium solving as flow estimation. SoTA zero-shot generalization. \
+    [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/deep-equilibrium-optical-flow-estimation/optical-flow-estimation-on-kitti-2015-train)](https://paperswithcode.com/sota/optical-flow-estimation-on-kitti-2015-train?p=deep-equilibrium-optical-flow-estimation) \
   [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] 
 
 - On Training Implicit Models \
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
   (\*equal contribution) \
   In *Neural Information Processing Systems (NeurIPS) 2021* \
-  **TL;DR**: Cheap, fast, and stable inexact gradient works as well as exact implicit differentiation. \
+  **TL;DR**: Cheap, fast, and stable inexact gradient works as well as implicit differentiation. \
   [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)] 
 
 - Residual Relaxation for Multi-view Representation Learning \
@@ -105,7 +106,7 @@ Projects
   **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, Zhouchen Lin.
   (\*equal contribution) \
   In *International Conference on Learning Representations (ICLR) 2021*, **<font color='orange'>top 3%</font>**. \
-  **TL;DR**: Matrix decomposition as global context decomposition. \
+  **TL;DR**: Optimization (matrix decomposition) as attention. \
   [[PDPaperF](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] 
 
   
