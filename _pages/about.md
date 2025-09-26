@@ -8,19 +8,19 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm a CS Ph.D. student at CMU advised by [Zico Kolter](https://zicokolter.com/). Previously, I was a research assistant at Peking University, advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I also had a wonderful summer at Meta Reality Labs with [Shaojie Bai](https://scholar.google.com/citations?user=DLVP3PcAAAAJ&hl=en) working on generative avatar encoding.
+Hi, there! I'm Zhengyang Geng, a Ph.D. student advised by [Zico Kolter](https://zicokolter.com/). I am fortunate to work closely with [Kaiming He](https://people.csail.mit.edu/kaiming/). Previously, I was a research assistant advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I also had a chance to work with [Shaojie Bai](https://scholar.google.com/citations?user=DLVP3PcAAAAJ&hl=en).
 
-I am an enthusiast of dynamics, recognizing, understanding, and developing dynamics that self-organize complex systems. 
+I am an enthusiast of dynamics, recognizing, understanding, and developing dynamics that lead to non-trivial systems. 
 
 Research
 ---------
 
-I have eclectic interests in machine learning and deep learning, especially when combined with dynamics. I believe that structured decomposition (perception) and reconstruction (generation) are key to understanding the emergence of general intelligence, which dynamics can elegantly achieve.
+I pursue a principled—and, yes, playful (乐子)—understanding of intelligence. My interests are eclectic, but they converge on dynamics as the unifying language. I believe that structured decomposition (perception) and reconstruction (generation) are key to the emergence of general intelligence, and that dynamics provide an elegant mechanism.
 
-- Regarding the "forward" pass, I study **dynamical systems** (fixed point equations, optimization, differential equations, etc) as the construction method and learning principle in neural networks.
-- Regarding the "backward" pass, I pursue a better understanding of neural network **training dynamics**. I am fascinated by their landscape. A strong belief drives me to investigate the interaction between data/env, model, and learning dynamics.
+- Regarding the "forward" pass, I study **dynamical systems** as the construction method and learning principle in neural networks.
+- Regarding the "backward" pass, I investigate **training dynamics**, their geometry, landscape, and the couplings among data/env, model, and optimization.
 
-I am also interested in modeling and understanding nature through dynamics. The only constant is change. The invariance under change is truth. :D
+Beyond artificial systems, I’m interested in modeling and understanding nature through dynamics. The only constant is change; invariance under change is truth.
 
 Twitter
 ---------
@@ -30,10 +30,18 @@ Twitter
 Projects
 ---------
 
+- Mean Flows for One-step Generative Modeling \
+  **Zhengyang Geng**, Mingyang Deng, Xingjian Bai, J. Zico Kolter, and Kaiming He \
+  In *Neural Information Processing Systems (NeurIPS) 2025*, **<font color='orange'>Oral</font>**. \
+  **TL;DR**: Learning to solve generative dynamics at training time. \
+  **Key Words**: Identity, Fixed Points, Differentiation (verification)-Integration (generation) Gap \
+  [[Paper](https://arxiv.org/abs/2505.13447)] [[JAX Code](https://github.com/Gsunshine/meanflow)] [[Pytorch Code](https://github.com/Gsunshine/py-meanflow )]
+
 - Consistency Models Made Easy \
   **Zhengyang Geng**, William Luo, Ashwini Pokle, and J. Zico Kolter \
-  **TL;DR**: Easy Consistency Tuning through Self Teacher :D \
-  [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)] 
+  In *International Conference on Learning Representations (ICLR) 2025* \
+  **TL;DR**: Easy Consistency Tuning through Self Teacher \
+  [[Paper](https://arxiv.org/abs/2406.14548)][[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)] 
 
 - <div style="display: flex; align-items: center; gap: 10px;">
     <img src="/images/TorchDEQ_Logo.gif" alt="TorchDEQ Logo" width="55">
@@ -50,7 +58,7 @@ Projects
   In *Neural Information Processing Systems (NeurIPS) 2023* \
   **Zhengyang Geng**\*, Ashwini Pokle\*, and J. Zico Kolter \
   **TL;DR**: Generative Equilibrium Transformer (GET) as strong 1-step diffusion learner. \
-  [[Paper](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
+  [[PDF](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
 
 - <div style="display: flex; align-items: center; gap: 10px;">
     <img src="/images/Medusa_logo.png" alt="Medusa Logo" width="55">
@@ -60,6 +68,7 @@ Projects
     </div>
   </div>
 
+  In *International Conference on Machine Learning (ICML) 2024* \
   **TL;DR**: Simple LLM acceleration with multiple decoding heads and self-verification. \
   [[Report](https://arxiv.org/abs/2401.10774)] [[Blog](https://sites.google.com/view/medusa-llm)] [[Code](https://github.com/FasterDecoding/Medusa)] 
 
@@ -85,9 +94,8 @@ Projects
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
   (\*equal contribution) \
   In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022* \
-  **TL;DR**: Equilibrium solving as flow estimation. SoTA zero-shot generalization. \
-    [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/deep-equilibrium-optical-flow-estimation/optical-flow-estimation-on-kitti-2015-train)](https://paperswithcode.com/sota/optical-flow-estimation-on-kitti-2015-train?p=deep-equilibrium-optical-flow-estimation) \
-  [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] 
+  **TL;DR**: Harder problems. More compute. Better convergence & performance. \
+  [[PDF](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] 
 
 - On Training Implicit Models \
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
@@ -107,7 +115,7 @@ Projects
   (\*equal contribution) \
   In *International Conference on Learning Representations (ICLR) 2021*, **<font color='orange'>top 3%</font>**. \
   **TL;DR**: Optimization (matrix decomposition) as attention. \
-  [[PDPaperF](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] 
+  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] 
 
   
   
