@@ -8,114 +8,134 @@ redirect_from:
   - /about.html
 ---
 
-Hi, there! I'm Zhengyang Geng, a Ph.D. student advised by [Zico Kolter](https://zicokolter.com/). I am fortunate to work closely with [Kaiming He](https://people.csail.mit.edu/kaiming/). Previously, I was a research assistant advised by [Zhouchen Lin](https://zhouchenlin.github.io/). I also had a chance to work with [Shaojie Bai](https://scholar.google.com/citations?user=DLVP3PcAAAAJ&hl=en).
+Hi there, I'm Zhengyang Geng, a final-year Ph.D. student advised by [Zico Kolter](https://zicokolter.com/) and working closely with [Kaiming He](https://people.csail.mit.edu/kaiming/). Previously, I worked with [Zhouchen Lin](https://zhouchenlin.github.io/) and [Shaojie Bai](https://scholar.google.com/citations?user=DLVP3PcAAAAJ&hl=en).
 
 I am an enthusiast of dynamics, recognizing, understanding, and developing dynamics that lead to non-trivial systems. 
 
 Research
 ---------
 
-I pursue a principled—and, yes, playful (乐子)—understanding of intelligence. My interests are eclectic, but they converge on dynamics as the unifying language. I believe that structured decomposition (perception) and reconstruction (generation) are key to the emergence of general intelligence, and that dynamics provide an elegant mechanism.
+<div class="research-vision">
+  <p>
+  I pursue a <em>principled</em>—and, yes, playful (乐子)—understanding of intelligence. My interests are eclectic, but they converge on dynamics as the unifying language. I believe that structured decomposition (<em>representation</em>) and reconstruction (<em>generation</em>) are key to the emergence of general intelligence, and that dynamics provide an elegant mechanism. 
 
-- Regarding the "forward" pass, I study **dynamical systems** as the construction method and learning principle in neural networks.
-- Regarding the "backward" pass, I investigate **training dynamics**, their geometry, landscape, and the couplings among data/env, model, and optimization.
+  Beyond artificial systems, I’m interested in modeling and understanding nature through dynamics. The only constant is change; invariance under change is truth.
+  </p>
+</div>
 
-Beyond artificial systems, I’m interested in modeling and understanding nature through dynamics. The only constant is change; invariance under change is truth.
+<details class="research-focus-details">
+  <summary>Forward/Backward Perspective</summary>
+  <div class="research-focus">
+    <div class="research-focus__item">
+      <h4>Forward Pass</h4>
+      <p>I study <strong>dynamical systems</strong> as both a construction method and a learning principle for neural networks.</p>
+    </div>
+    <div class="research-focus__item">
+      <h4>Backward Pass</h4>
+      <p>I investigate <strong>training dynamics</strong>: geometry, landscapes, and couplings among data/environment, model, and optimization.</p>
+    </div>
+  </div>
+</details>
 
 Twitter
 ---------
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">There is no need to anneal down life&#39;s &quot;learning rate&quot; too early. Even today, I often feel I should &quot;restart&quot; to extricate myself from too many AI papers📝or bubbles🫧.<br><br>AGI should offer people better childhood and teenage lives, not grasping people to serve and achieve itself.… <a href="https://t.co/JCrRfL3boU">https://t.co/JCrRfL3boU</a></p>&mdash; Zhengyang Geng (@ZhengyangGeng) <a href="https://twitter.com/ZhengyangGeng/status/1778672398046216314?ref_src=twsrc%5Etfw">April 12, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-note">
+  <p>"There is no need to anneal down life's learning rate too early... AGI should offer people better childhood and teenage lives, not grasping people to serve and achieve itself."</p>
+  <p>— <a href="https://x.com/ZhengyangGeng/status/1778672398046216314">Post on X (Apr 12, 2024)</a></p>
+</blockquote>
 
-Projects
+Selected Works
 ---------
 
-- Mean Flows for One-step Generative Modeling \
-  **Zhengyang Geng**, Mingyang Deng, Xingjian Bai, J. Zico Kolter, and Kaiming He \
-  In *Neural Information Processing Systems (NeurIPS) 2025*, **<font color='orange'>Oral</font>**. \
-  **TL;DR**: Learning to solve generative dynamics at training time. \
-  **Key Words**: Identity, Fixed Points, Differentiation (verification)-Integration (generation) Gap \
-  [[Paper](https://arxiv.org/abs/2505.13447)] [[JAX Code](https://github.com/Gsunshine/meanflow)] [[Pytorch Code](https://github.com/Gsunshine/py-meanflow )]
+<details class="works-group" markdown="1">
+<summary><span class="works-group__head"><span class="works-group__title">Generative Modeling</span><span class="works-group__tag">towards 1-step</span></span></summary>
+<div class="works-group__content" markdown="1">
 
-- Consistency Models Made Easy \
-  **Zhengyang Geng**, William Luo, Ashwini Pokle, and J. Zico Kolter \
-  In *International Conference on Learning Representations (ICLR) 2025* \
-  **TL;DR**: Easy Consistency Tuning through Self Teacher \
-  [[Paper](https://arxiv.org/abs/2406.14548)][[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)] 
+<div class="works-subgroup" markdown="1">
+- One-step Latent-free Image Generation with Pixel Mean Flows <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=report">Tech Report</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
+  Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, Tianhong Li, **Zhengyang Geng**, and Kaiming He <br>
+  **TL;DR**: One-step image generation directly in pixel space. <br>
+  [[Paper](https://arxiv.org/abs/2601.22158)] [[Code](https://github.com/Lyy-iiis/pMF)]
 
-- <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="/images/TorchDEQ_Logo.gif" alt="TorchDEQ Logo" width="55">
-    <div>
-      <p style="margin-bottom: 5px;margin-top: 5px;">TorchDEQ: A Library for Deep Equilibrium Models</p>
-      <p style="margin-top: 5px;margin-bottom: 5px"><strong>Zhengyang Geng</strong>, and J. Zico Kolter</p>
-    </div>
-  </div>
+- Improved Mean Flows: On the Challenges of Fastforward Generative Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
+  **Zhengyang Geng**\*, Yiyang Lu\*, Zongze Wu, Eli Shechtman, J. Zico Kolter, and Kaiming He <br>
+  **TL;DR**: Stability, Flexibility, and Architecture for Mean Flows. <br>
+  [[Paper](https://arxiv.org/abs/2512.02012)] [[Code](https://github.com/Lyy-iiis/imeanflow)]
 
-  **TL;DR**: Modern Fixed Point Systems using Pytorch. \
+- Mean Flows for One-step Generative Modeling <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2025">2025</a> <span class="pub-badge pub-badge--oral">Oral</span> <br>
+  **Zhengyang Geng**, Mingyang Deng, Xingjian Bai, J. Zico Kolter, and Kaiming He <br>
+  **TL;DR**: Learning to solve generative dynamics at training time. <br>
+  [[Paper](https://arxiv.org/abs/2505.13447)] [[JAX Code](https://github.com/Gsunshine/meanflow)] [[PyTorch Code](https://github.com/Gsunshine/py-meanflow )]
+
+- Consistency Models Made Easy <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=iclr">ICLR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2025">2025</a> <br>
+  **Zhengyang Geng**, William Luo, Ashwini Pokle, and J. Zico Kolter <br>
+  **TL;DR**: Easy Consistency Tuning through Self Teacher. <br>
+  [[Paper](https://arxiv.org/abs/2406.14548)] [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)]
+
+- 1-Step Diffusion Distillation via Deep Equilibrium Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2023">2023</a> <br>
+  **Zhengyang Geng**\*, Ashwini Pokle\*, and J. Zico Kolter <br>
+  **TL;DR**: Equilibrium Transformer + offline distillation for one-step diffusion. <br>
+  [[Paper](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)]
+
+- Deep Equilibrium Approaches To Diffusion Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2022">2022</a> <br>
+  Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter <br>
+  **TL;DR**: Parallel diffusion decoding via fixed-point equations. <br>
+  [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)]
+
+</div>
+
+<div class="works-subgroup" markdown="1">
+- Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=icml">ICML</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2025">2025</a> <br>
+  Weijian Luo, Colin Zhang, Debing Zhang, and **Zhengyang Geng** <br>
+  **TL;DR**: Score-based preference alignment for one-step text-to-image models. <br>
+  [[Paper](https://arxiv.org/abs/2410.20898)] [[Code](https://github.com/pkulwj1994/diff_instruct_star)]
+
+- One-Step Diffusion Distillation through Score Implicit Matching <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2024">2024</a> <br>
+  Weijian Luo, Zemin Huang, **Zhengyang Geng**, J. Zico Kolter, and Guo-jun Qi <br>
+  **TL;DR**: Data-free one-step diffusion distillation via score implicit matching. <br>
+  [[Paper](https://arxiv.org/abs/2410.16794)] [[Code](https://github.com/maple-research-lab/SIM)]
+</div>
+
+<div class="works-subgroup" markdown="1">
+- <img src="/images/Medusa_logo.png" alt="Medusa Logo" width="44" style="vertical-align:middle;margin-right:8px;"> Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=icml">ICML</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2024">2024</a> <br>
+  Tianle Cai\*, Yuhong Li\*, **Zhengyang Geng**, Hongwu Peng, and Tri Dao <br>
+  **TL;DR**: Simple LLM acceleration with multiple decoding heads and self-verification. <br>
+  [[Paper](https://arxiv.org/abs/2401.10774)] [[Blog](https://sites.google.com/view/medusa-llm)] [[Code](https://github.com/FasterDecoding/Medusa)]
+</div>
+
+</div>
+</details>
+
+<details class="works-group" markdown="1">
+<summary><span class="works-group__head"><span class="works-group__title">Neural Attractors & Deep Equilibrium Models</span><span class="works-group__tag">towards &infin;-step</span></span></summary>
+<div class="works-group__content" markdown="1">
+
+- <img src="/images/TorchDEQ_Logo.gif" alt="TorchDEQ Logo" width="44" style="vertical-align:middle;margin-right:8px;"> TorchDEQ: A Library for Deep Equilibrium Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=report">Tech Report</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2023">2023</a> <br>
+  **Zhengyang Geng** and J. Zico Kolter <br>
+  **TL;DR**: Modern fixed-point systems in PyTorch. <br>
   [[Report](https://arxiv.org/abs/2310.18605)] [[Code](https://github.com/locuslab/get)] [[Colab Tutorial](https://colab.research.google.com/drive/12HiUnde7qLadeZGGtt7FITnSnbUmJr-I?usp=sharing)] [[Doc](https://torchdeq.readthedocs.io/en/latest/get_started.html)] [[DEQ Zoo](https://torchdeq.readthedocs.io/en/latest/deq-zoo/model.html)]
 
-- 1-Step Diffusion Distillation via Deep Equilibrium Models \
-  In *Neural Information Processing Systems (NeurIPS) 2023* \
-  **Zhengyang Geng**\*, Ashwini Pokle\*, and J. Zico Kolter \
-  **TL;DR**: Generative Equilibrium Transformer (GET) as strong 1-step diffusion learner. \
-  [[PDF](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
+- Deep Equilibrium Optical Flow Estimation <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2022">2022</a> <br>
+  Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, and J. Zico Kolter <br>
+  **TL;DR**: Harder problems, more compute, better convergence and performance. <br>
+  [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)]
 
-- <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="/images/Medusa_logo.png" alt="Medusa Logo" width="55">
-    <div>
-      <p style="margin-bottom: 5px;margin-top: 5px;">Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads</p>
-      <p style="margin-top: 5px;margin-bottom: 5px"> Tianle Cai*, Yuhong Li*, <strong>Zhengyang Geng</strong>, Hongwu Peng, Tri Dao</p>
-    </div>
-  </div>
+- On Training Implicit Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2021">2021</a> <br>
+  **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, and Zhouchen Lin <br>
+  **TL;DR**: Inexact gradient training can be cheap, fast, and stable. <br>
+  [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)]
 
-  In *International Conference on Machine Learning (ICML) 2024* \
-  **TL;DR**: Simple LLM acceleration with multiple decoding heads and self-verification. \
-  [[Report](https://arxiv.org/abs/2401.10774)] [[Blog](https://sites.google.com/view/medusa-llm)] [[Code](https://github.com/FasterDecoding/Medusa)] 
+- Is Attention Better Than Matrix Decomposition? <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=iclr">ICLR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2021">2021</a> <span class="pub-badge pub-badge--top">Top 3%</span> <br>
+  **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, and Zhouchen Lin <br>
+  **TL;DR**: Optimization (matrix decomposition) as attention. <br>
+  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)]
 
-- Equilibrium Image Denoising With Implicit Differentiation \
-  In *IEEE Transactions on Image Processing* \
-  Qi Chen, Yifei Wang, **Zhengyang Geng**, Yisen Wang, Jiansheng Yang, and Zhouchen Lin \
-  **TL;DR**: Equilibrium image denoising with implicit differentiation. \
-  [[Paper](https://ieeexplore.ieee.org/abstract/document/100705887)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/nerd.bib)]
+</div>
+</details>
 
-- Deep Equilibrium Approaches To Diffusion Models \
-  In *Neural Information Processing Systems (NeurIPS) 2022* \
-  Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
-  **TL;DR**: Parallel diffusion decoding via fixed point equations. \
-  [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)] 
+<p><a class="btn btn--primary works-full-btn" href="{{ site.author.googlescholar }}">Full List (Google Scholar)</a></p>
 
-- Eliminating Gradient Conflict in Reference-based Line-art Colorization \
-  Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, Yibo Yang \
-  In *Proceedings of European Conference on Computer Vision (ECCV) 2022* \
-  **TL;DR**: Investigating and alleviating gradient conflicts in attention training. \
-  [[Paper](https://arxiv.org/abs/2207.06095)] [[Code](https://github.com/kunkun0w0/SGA)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/sga.bib)]
-
-- Deep Equilibrium Optical Flow Estimation \
-  Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, J. Zico Kolter
-  (\*equal contribution) \
-  In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022* \
-  **TL;DR**: Harder problems. More compute. Better convergence & performance. \
-  [[PDF](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)] 
-
-- On Training Implicit Models \
-  **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, Zhouchen Lin
-  (\*equal contribution) \
-  In *Neural Information Processing Systems (NeurIPS) 2021* \
-  **TL;DR**: Cheap, fast, and stable inexact gradient works as well as implicit differentiation. \
-  [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)] 
-
-- Residual Relaxation for Multi-view Representation Learning \
-  Yifei Wang, **Zhengyang Geng**, Feng Jiang, Chuming Li, Yisen Wang, Jiansheng Yang, Zhouchen Lin. \
-  In *Neural Information Processing Systems (NeurIPS) 2021* \
-  **TL;DR**: Equivariant contrastive learning replaces invariant contrastive learning. \
-  [[Paper](https://arxiv.org/pdf/2110.15348.pdf)] [[Slides](https://yifeiwang77.github.io/files/slides/NeurIPS2021_Prelax_slides.pdf)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/prelax.bib)]
-
-- Is Attention Better Than Matrix Decomposition? \
-  **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, Zhouchen Lin.
-  (\*equal contribution) \
-  In *International Conference on Learning Representations (ICLR) 2021*, **<font color='orange'>top 3%</font>**. \
-  **TL;DR**: Optimization (matrix decomposition) as attention. \
-  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTex](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)] 
 
   
   
