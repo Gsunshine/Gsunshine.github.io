@@ -17,14 +17,34 @@ Research
 
 <div class="research-vision">
   <p>
-  I pursue a <em>principled</em>—and, yes, playful (乐子)—understanding of intelligence. My interests are eclectic, but they converge on dynamics as the unifying language. I believe that structured decomposition (<em>representation</em>) and reconstruction (<em>generation</em>) are key to the emergence of general intelligence, and that dynamics provide an elegant mechanism. 
-
+  I pursue a <em>principled</em>—and, yes, playful (乐子)—understanding of intelligence. My interests are eclectic, but they converge on dynamics as the unifying language.
+  </p>
+  <p>
+  I explore the spectrum of adaptive computation: making intelligence more accessible and efficient via selective compression, and capable via extended compute.
+  </p>
+  <p>
   Beyond artificial systems, I’m interested in modeling and understanding nature through dynamics. The only constant is change; invariance under change is truth.
   </p>
 </div>
 
+<div class="research-tech">
+  <div class="research-spectrum">
+    <div class="research-spectrum__item">
+      <h4>Towards 1-step models (compression extreme)</h4>
+      <p>I study how to compress iterative algorithms into single-step inference so intelligence becomes cheaper, faster, and more widely accessible.</p>
+    </div>
+    <div class="research-spectrum__item">
+      <h4>Towards &infin;-step models (capacity extreme)</h4>
+      <p>I study neural attractors and deep equilibrium models that scale adaptive computation to match problem complexity.</p>
+    </div>
+  </div>
+</div>
+
 <details class="research-focus-details">
-  <summary>Forward/Backward Perspective</summary>
+  <summary>Technical Lenses</summary>
+  <div class="research-coda research-coda--technical">
+    <p>I believe that structured decomposition (<em>representation</em>) and reconstruction (<em>generation</em>) are key to the emergence of general intelligence, and that dynamics provide an elegant mechanism.</p>
+  </div>
   <div class="research-focus">
     <div class="research-focus__item">
       <h4>Forward Pass</h4>
