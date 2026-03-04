@@ -20,7 +20,7 @@ Research
   I pursue a <em>principled</em>—and, yes, playful (乐子)—understanding of intelligence. My interests are eclectic, but they converge on dynamics as the unifying language.
   </p>
   <p>
-  I explore the spectrum of adaptive computation: making intelligence more accessible and efficient via selective compression, and capable via extended compute.
+  I explore the spectrum of adaptive computation: making intelligence more accessible and efficient via selective compression, and more capable and controllable via extended compute.
   </p>
   <p>
   Beyond artificial systems, I’m interested in modeling and understanding nature through dynamics. The only constant is change; invariance under change is truth.
@@ -35,7 +35,7 @@ Research
     </div>
     <div class="research-spectrum__item">
       <h4>Towards &infin;-step models (capacity extreme)</h4>
-      <p>I study neural attractors and deep equilibrium models that scale adaptive computation to match problem complexity.</p>
+      <p>I study neural attractors and deep equilibrium models that scale adaptive computation with problem complexity and human intention.</p>
     </div>
   </div>
 </div>
