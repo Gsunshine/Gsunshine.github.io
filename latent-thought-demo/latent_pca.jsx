@@ -654,8 +654,8 @@ function LatentPCA() {
   // the Flow + MF panels). Separate from dotScale so the global dot
   // size knob doesn't blow up the swarm.
   const [bgScale, setBgScale] = lpUseState(4);
-  // 'animate' = play-evolution view (default); 'fan' = static, time-coloured
-  const [view, setView] = lpUseState("animate");
+  // 'fan' = static, time-coloured view (default); 'animate' = play-evolution view
+  const [view, setView] = lpUseState("fan");
   // How many measurement waypoints to display on the Flow trajectory.
   // The dense file gives us all 33 steps; we expose presets that
   // subsample it. The default "log" preset matches the original
@@ -788,8 +788,8 @@ function LatentPCA() {
         </div>
         <div style={lpStyles.segGroup}>
           {[
-          { key: "animate", label: "animate" },
-          { key: "fan", label: "time color" }].
+          { key: "fan", label: "time color" },
+          { key: "animate", label: "animate" }].
           map((opt) =>
           <button key={opt.key}
           onClick={() => setView(opt.key)}
