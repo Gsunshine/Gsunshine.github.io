@@ -321,6 +321,42 @@ function RealSamples() {
 
   return (
     <section style={sampleStyles.wrap}>
+      <div style={sampleStyles.sectionHeader}>
+        <SamplePicker
+          n={data.samples.length}
+          value={sampleIdx}
+          onChange={(v) => {
+            setSampleIdx(v);
+            setStepIdx(0);
+            startRef.current = 0;
+            setPlaying(true);
+          }} />
+        <div style={sampleStyles.compactControls}>
+          <button
+            onClick={() => {
+              if (playing) {
+                setPlaying(false);
+              } else {
+                setStepIdx(0);
+                startRef.current = 0;
+                setPlaying(true);
+              }
+            }}
+            style={{ ...sampleStyles.btn, ...sampleStyles.btnPrimary }}>
+            {playing ? "❚❚ pause" : "▶ play"}
+          </button>
+          <button
+            onClick={() => {
+              setPlaying(false);
+              setStepIdx(0);
+              startRef.current = 0;
+            }}
+            style={sampleStyles.btn}>
+            ⟲ reset
+          </button>
+          <span className="mono" style={sampleStyles.stepLabel}>step {stepIdx}/{total}</span>
+        </div>
+      </div>
       <div style={sampleStyles.grid}>
         <TextSamplePanel
           variant="flow"
@@ -355,14 +391,19 @@ function RealSamples() {
 function SamplePicker({ n, value, onChange }) {
   return (
     <div style={sampleStyles.picker}>
-      <button onClick={() => onChange((value - 1 + n) % n)}
-      style={sampleStyles.pickerBtn}>‹</button>
-      <div style={{ textAlign: "center", padding: "0 14px" }}>
-        <div className="mono" style={{ fontSize: 10, color: "var(--ink-3)" }}>sample</div>
-        <div className="mono" style={{ fontSize: 14, color: "var(--ink)", fontWeight: 500 }}>{value + 1} / {n}</div>
-      </div>
-      <button onClick={() => onChange((value + 1) % n)}
-      style={sampleStyles.pickerBtn}>›</button>
+      <span className="mono" style={sampleStyles.pickerLabel}>sample</span>
+      {Array.from({ length: n }, (_, i) =>
+        <button
+          key={i}
+          onClick={() => onChange(i)}
+          className="mono"
+          style={{
+            ...sampleStyles.pickerBtn,
+            ...(i === value ? sampleStyles.pickerBtnActive : {})
+          }}>
+          {i + 1}
+        </button>
+      )}
     </div>);
 
 }
@@ -446,13 +487,25 @@ const sampleStyles = {
   },
 
   picker: {
-    display: "flex", alignItems: "stretch",
-    border: "1px solid var(--rule)", borderRadius: 6, overflow: "hidden",
+    display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap",
     background: "var(--panel)"
   },
+  compactControls: {
+    display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap"
+  },
+  pickerLabel: {
+    fontSize: 11, color: "var(--ink-3)", letterSpacing: 0.3, marginRight: 4
+  },
   pickerBtn: {
-    width: 36, fontSize: 18, color: "var(--ink-2)", background: "var(--bg-2)",
-    borderLeft: "1px solid var(--rule-2)", borderRight: "1px solid var(--rule-2)"
+    width: 30, height: 30, padding: 0,
+    fontSize: 11, color: "var(--ink-2)", background: "var(--bg-2)",
+    border: "1px solid var(--rule)", borderRadius: 5
+  },
+  pickerBtnActive: {
+    background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
+  },
+  stepLabel: {
+    fontSize: 11, color: "var(--ink-2)", minWidth: 70
   },
   segGroup: {
     display: "inline-flex", border: "1px solid var(--rule)", borderRadius: 5, overflow: "hidden"
