@@ -247,19 +247,7 @@ function FlowPCAPanel({ proj, loadedSet, selectedSid, pcaStep, onSelect, total, 
                 });
               })}
               </g>
-              {/* Coloured dots at every revealed waypoint */}
-              <g>
-                {allSamples.map((s) => visTraj(s).
-              filter((p) => p.step <= pcaStep).
-              map((p) =>
-              <circle key={`${s.sample_id}-${p.step}`}
-              cx={p.x} cy={p.y}
-              r={W * 0.0034 * dotScale}
-              fill={colorForStep(p.step)}
-              opacity={0.85} />
-              ))}
-              </g>
-              {/* Selected sample on top — same colours but bigger */}
+              {/* Selected sample on top — thicker line, no waypoint markers. */}
               {selected && (() => {
               const traj = visTraj(selected);
               return (
@@ -275,39 +263,6 @@ function FlowPCAPanel({ proj, loadedSet, selectedSid, pcaStep, onSelect, total, 
                       strokeLinecap="round" />);
 
                   })}
-                    {traj.filter((p) => p.step <= pcaStep).map((p) =>
-                  <circle key={p.step}
-                  cx={p.x} cy={p.y}
-                  r={W * 0.0062 * dotScale}
-                  fill={colorForStep(p.step)}
-                  stroke="var(--bg)"
-                  strokeWidth={W * 0.0014} />
-                  )}
-                    {/* Pulsing head at the current frontier */}
-                    {(() => {
-                    const head = positionAtPcaStep(traj, pcaStep);
-                    return (
-                      <g>
-                          <circle cx={head.x} cy={head.y}
-                        r={W * 0.0095 * dotScale * headScale}
-                        fill={colorForStep(Math.round(pcaStep))}
-                        stroke="var(--bg)"
-                        strokeWidth={W * 0.0014} />
-                          <circle cx={head.x} cy={head.y}
-                        r={W * 0.0095 * dotScale * headScale}
-                        fill="none"
-                        stroke={colorForStep(Math.round(pcaStep))}
-                        opacity="0.7">
-                            <animate attributeName="r"
-                          values={`${W * 0.0095 * dotScale * headScale};${W * 0.020 * dotScale * headScale};${W * 0.0095 * dotScale * headScale}`}
-                          dur="1.8s" repeatCount="indefinite" />
-                            <animate attributeName="opacity"
-                          values="0.7;0;0.7"
-                          dur="1.8s" repeatCount="indefinite" />
-                          </circle>
-                        </g>);
-
-                  })()}
                   </g>);
 
             })()}
@@ -401,13 +356,6 @@ function FlowPCAPanel({ proj, loadedSet, selectedSid, pcaStep, onSelect, total, 
                   stroke="var(--flow)"
                   strokeWidth={W * 0.0034}
                   strokeLinejoin="round" />
-                {/* Visited waypoints */}
-                {traj.filter((p) => p.step <= pcaStep).map((p) =>
-                  <circle key={p.step}
-                  cx={p.x} cy={p.y}
-                  r={W * 0.0042 * dotScale}
-                  fill="var(--flow)" />
-                  )}
                 {/* Leading head — interpolated, with halo */}
                 <circle cx={head.x} cy={head.y}
                   r={W * 0.0095 * dotScale * headScale}
