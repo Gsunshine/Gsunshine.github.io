@@ -962,28 +962,28 @@ const lpStyles = {
     background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
   },
   stepper: {
-    display: "inline-flex", alignItems: "stretch",
-    height: 56, overflow: "hidden",
-    background: "var(--panel)", border: "1px solid var(--rule)", borderRadius: 8
+    display: "flex", alignItems: "stretch",
+    overflow: "hidden",
+    background: "var(--panel)", border: "1px solid var(--rule)", borderRadius: 6
   },
   stepperBtn: {
-    width: 66, padding: 0,
-    fontSize: 30, fontWeight: 600,
+    width: 36, padding: 0,
+    fontSize: 18,
     color: "var(--ink-2)", background: "var(--bg-2)"
   },
   stepperCenter: {
-    width: 158, display: "flex", flexDirection: "column",
+    display: "flex", flexDirection: "column",
     alignItems: "center", justifyContent: "center",
-    padding: "4px 18px 6px", background: "var(--panel)"
+    padding: "0 14px", background: "var(--panel)", textAlign: "center"
   },
   stepperLabel: {
-    fontSize: 14, lineHeight: 1.0, color: "var(--ink-3)", letterSpacing: 0.2
+    fontSize: 10, lineHeight: 1.2, color: "var(--ink-3)", letterSpacing: 0.2
   },
   stepperValue: {
-    marginTop: 4, fontSize: 26, lineHeight: 1.0, fontWeight: 500, color: "var(--ink)"
+    marginTop: 1, fontSize: 14, lineHeight: 1.25, fontWeight: 500, color: "var(--ink)"
   },
   stepperSlash: {
-    color: "var(--ink-2)", padding: "0 4px"
+    color: "var(--ink-2)", padding: "0 2px"
   },
 
   segGroup: {
