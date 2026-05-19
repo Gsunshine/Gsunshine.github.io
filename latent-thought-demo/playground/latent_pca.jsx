@@ -340,6 +340,19 @@ function FlowPCAPanel({ proj, loadedSet, selectedSid, pcaStep, onSelect, total, 
               )}
           </g>
 
+          {/* Static start positions only (Gaussian noise cloud). This is
+              an endpoint reference, not an intermediate trajectory marker. */}
+          <g opacity="0.32">
+            {allSamples.map((s) => {
+              const start = visTraj(s)[0];
+              return (
+                <circle key={`start-${s.sample_id}`}
+                  cx={start.x} cy={start.y}
+                  r={W * 0.0024 * dotScale}
+                  fill="var(--noise)" />);
+            })}
+          </g>
+
           {/* Animated heads — 256 particles riding their trajectories */}
           <g>
             {allSamples.map((s) => {
@@ -441,6 +454,9 @@ function FlowPCAPanel({ proj, loadedSet, selectedSid, pcaStep, onSelect, total, 
         </div> :
 
       <div style={lpStyles.legend}>
+          <span className="mono" style={lpStyles.legendItem}>
+            <span style={{ ...lpStyles.legendSwatch, background: "var(--noise)" }} /> Gaussian
+          </span>
           <span className="mono" style={lpStyles.legendItem}>
             <span style={{ ...lpStyles.legendSwatch, background: "var(--flow)", opacity: 0.55 }} /> all 256
           </span>
