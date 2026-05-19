@@ -662,7 +662,7 @@ function LatentPCA() {
   // size knob doesn't blow up the swarm.
   const bgScale = 4;
   // 'animate' = play-evolution view (default); 'fan' = static, time-coloured
-  const view = "animate";
+  const [view, setView] = lpUseState("animate");
   // How many measurement waypoints to display on the Flow trajectory.
   // The dense file gives us all 33 steps; we expose presets that
   // subsample it. The default "log" preset matches the original
@@ -772,6 +772,20 @@ function LatentPCA() {
             setLocalActive(true);
             setPlaying(true);
           }} />
+        <div style={lpStyles.segGroup}>
+          {[
+          { key: "animate", label: "animate" },
+          { key: "fan", label: "time color" }].
+          map((opt) =>
+          <button key={opt.key}
+          onClick={() => setView(opt.key)}
+          className="mono"
+          style={{
+            ...lpStyles.segBtn,
+            ...(view === opt.key ? lpStyles.segBtnActive : {})
+          }}>{opt.label}</button>
+          )}
+        </div>
         <button onClick={playing ? () => setPlaying(false) : startLocalPlay}
         style={{ ...lpStyles.btn, ...lpStyles.btnPrimary }}>
           {playing ? "❚❚ pause" : "▶ play"}
