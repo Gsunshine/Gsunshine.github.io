@@ -793,10 +793,10 @@ function LatentPCA() {
             {progress01.toFixed(2)}
           </span>
         </div>
-        {false && <div style={lpStyles.segGroup}>
+        <div style={lpStyles.segGroup}>
           {[
-          { key: "animate", label: "▶ animate" },
-          { key: "fan", label: "time fan" }].
+          { key: "animate", label: "animate" },
+          { key: "fan", label: "time color" }].
           map((opt) =>
           <button key={opt.key}
           onClick={() => setView(opt.key)}
@@ -806,7 +806,7 @@ function LatentPCA() {
             ...(view === opt.key ? lpStyles.segBtnActive : {})
           }}>{opt.label}</button>
           )}
-        </div>}
+        </div>
         {false && <>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}
         title="Wall-clock duration for ONE Flow solver step. Total run = 32 × this.">
