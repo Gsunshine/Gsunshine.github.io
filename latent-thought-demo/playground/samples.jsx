@@ -249,17 +249,17 @@ function RealSamples() {
   const stepIdx = ctx?.stepIdx ?? 0;
   const setSampleIdx = ctx?.setSampleIdx;
   const setStepIdx = ctx?.setStepIdx;
-  const [playing, setPlaying] = useState(false);
-  const [stepDurationMs, setStepDurationMs] = useState(420); // per-step pace shared by both panels
+  const [playing, setPlaying] = useState(true);
+  const [stepDurationMs] = useState(200); // fixed export pace; shared by both panels
   // Which decoded state to show on the Flow side:
   //   "x0"  — x̂₀: the model's current clean-latent estimate
   //   "zt"  — z_t: the noisy solver state at that step
   // MF side is unaffected (only the final sample exists).
-  const [view, setView] = useState("zt");
+  const [view] = useState("zt");
   // AR-decoding flash animation knobs — exposed as live sliders so we can
   // dial in the right visual rhythm before locking the defaults.
-  const [flashDurMs, setFlashDurMs] = useState(260);
-  const [flashStaggerMs, setFlashStaggerMs] = useState(4);
+  const [flashDurMs] = useState(260);
+  const [flashStaggerMs] = useState(4);
   const rafRef = useRef(null);
   const startRef = useRef(0);
 
@@ -267,17 +267,30 @@ function RealSamples() {
   // solver step, so wall-clock time is shared between Flow and MF.
   useEffect(() => {
     if (!playing || !data) return;
+    let loopTimer = null;
     function step(now) {
       if (!startRef.current) startRef.current = now;
       const elapsed = now - startRef.current;
       const total = data.metadata.jit_num_steps;
       const s = Math.min(total, Math.floor(elapsed / stepDurationMs));
       setStepIdx(s);
-      if (s < total) rafRef.current = requestAnimationFrame(step);else
-      setPlaying(false);
+      if (s < total) {
+        rafRef.current = requestAnimationFrame(step);
+      } else {
+        setPlaying(false);
+        loopTimer = setTimeout(() => {
+          startRef.current = 0;
+          setStepIdx(0);
+          setPlaying(true);
+        }, 1200);
+      }
     }
     rafRef.current = requestAnimationFrame(step);
-    return () => {cancelAnimationFrame(rafRef.current);startRef.current = 0;};
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      if (loopTimer) clearTimeout(loopTimer);
+      startRef.current = 0;
+    };
   }, [playing, stepDurationMs, data]);
 
   if (!ctx || !data) return <div className="mono" style={{ color: "var(--ink-3)", padding: 20 }}>Loading real samples…</div>;
@@ -309,7 +322,40 @@ function RealSamples() {
   return (
     <section style={sampleStyles.wrap}>
       <div style={sampleStyles.sectionHeader}>
-        <SamplePicker n={data.samples.length} value={sampleIdx} onChange={(v) => {setSampleIdx(v);setStepIdx(total);setPlaying(false);}} />
+        <SamplePicker
+          n={data.samples.length}
+          value={sampleIdx}
+          onChange={(v) => {
+            setSampleIdx(v);
+            setStepIdx(0);
+            startRef.current = 0;
+            setPlaying(true);
+          }} />
+        <div style={sampleStyles.compactControls}>
+          <button
+            onClick={() => {
+              if (playing) {
+                setPlaying(false);
+              } else {
+                setStepIdx(0);
+                startRef.current = 0;
+                setPlaying(true);
+              }
+            }}
+            style={{ ...sampleStyles.btn, ...sampleStyles.btnPrimary }}>
+            {playing ? "❚❚ pause" : "▶ play"}
+          </button>
+          <button
+            onClick={() => {
+              setPlaying(false);
+              setStepIdx(0);
+              startRef.current = 0;
+            }}
+            style={sampleStyles.btn}>
+            ⟲ reset
+          </button>
+          <span className="mono" style={sampleStyles.stepLabel}>step {stepIdx}/{total}</span>
+        </div>
       </div>
 
       <div style={sampleStyles.grid}>
@@ -338,83 +384,6 @@ function RealSamples() {
           flashDurMs={flashDurMs} flashStaggerMs={flashStaggerMs}
           playing={playing} stepDurationMs={stepDurationMs} />
         
-      </div>
-
-      <div style={sampleStyles.controls}>
-        <button onClick={() => {setStepIdx(0);setPlaying(true);}}
-        style={{ ...sampleStyles.btn, ...sampleStyles.btnPrimary }} disabled={playing}>
-          {playing ? "playing…" : "▶ play"}
-        </button>
-        <button onClick={() => {setPlaying(false);setStepIdx(0);}} style={sampleStyles.btn} disabled={playing}>⟲ reset</button>
-        <button onClick={() => {setPlaying(false);setStepIdx(total);}} style={sampleStyles.btn} disabled={playing}>⇥ jump to end</button>
-
-        <div style={sampleStyles.segGroup} title="Flow panel: which decoded state to show">
-          <button onClick={() => setView("x0")}
-          className="mono"
-          style={{
-            ...sampleStyles.segBtn,
-            ...(view === "x0" ? sampleStyles.segBtnActive : {})
-          }}>x_0</button>
-          <button onClick={() => setView("zt")}
-          className="mono"
-          style={{
-            ...sampleStyles.segBtn,
-            ...(view === "zt" ? sampleStyles.segBtnActive : {})
-          }}>z_t</button>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 200 }}>
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>step</span>
-          <input type="range" min={0} max={total} step={1} value={stepIdx}
-          onChange={(e) => {setPlaying(false);setStepIdx(parseInt(e.target.value));}}
-          style={{ flex: 1 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 44 }}>{stepIdx}/{total}</span>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 180 }}>
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>per-step</span>
-          <input type="range" min={160} max={800} step={10} value={stepDurationMs}
-          onChange={(e) => setStepDurationMs(parseInt(e.target.value))}
-          style={{ flex: 1 }} />
-          <input type="number" min={160} max={2000} step={10} value={stepDurationMs}
-          onChange={(e) => {
-            const v = parseInt(e.target.value);
-            if (!isNaN(v)) setStepDurationMs(Math.max(160, v));
-          }}
-          className="mono" style={{ ...sampleStyles.select, width: 64, textAlign: "right" }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>ms</span>
-        </div>
-      </div>
-
-      <div style={{
-        ...sampleStyles.controls,
-        marginTop: 10,
-        background: "var(--bg-2)"
-      }}>
-        <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: 0.4 }}>
-          AR flash
-        </span>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 180 }}>
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>fade</span>
-          <input type="range" min={200} max={2400} step={50} value={flashDurMs}
-          onChange={(e) => setFlashDurMs(parseInt(e.target.value))}
-          style={{ flex: 1 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 56 }}>{flashDurMs}ms</span>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 180 }}>
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>cascade</span>
-          <input type="range" min={0} max={60} step={1} value={flashStaggerMs}
-          onChange={(e) => setFlashStaggerMs(parseInt(e.target.value))}
-          style={{ flex: 1 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 56 }}>{flashStaggerMs}ms/tok</span>
-        </div>
-        <button
-          className="mono"
-          style={{ ...sampleStyles.btn, fontSize: 11 }}
-          onClick={() => {setFlashDurMs(260);setFlashStaggerMs(4);}}
-          title="Reset to current defaults">
-          reset
-        </button>
       </div>
     </section>);
 
@@ -522,6 +491,9 @@ const sampleStyles = {
     display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap",
     background: "var(--panel)"
   },
+  compactControls: {
+    display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap"
+  },
   pickerLabel: {
     fontSize: 11, color: "var(--ink-3)", letterSpacing: 0.3, marginRight: 4
   },
@@ -532,6 +504,9 @@ const sampleStyles = {
   },
   pickerBtnActive: {
     background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
+  },
+  stepLabel: {
+    fontSize: 11, color: "var(--ink-2)", minWidth: 70
   },
   segGroup: {
     display: "inline-flex", border: "1px solid var(--rule)", borderRadius: 5, overflow: "hidden"
