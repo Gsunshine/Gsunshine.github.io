@@ -919,21 +919,16 @@ function LatentPCA() {
 }
 
 function PCASamplePicker({ n, value, onChange }) {
+  const prev = () => onChange((value - 1 + n) % n);
+  const next = () => onChange((value + 1) % n);
   return (
-    <div style={lpStyles.picker}>
-      <span className="mono" style={lpStyles.pickerLabel}>sample</span>
-      {Array.from({ length: n }, (_, i) =>
-        <button
-          key={i}
-          onClick={() => onChange(i)}
-          className="mono"
-          style={{
-            ...lpStyles.pickerBtn,
-            ...(i === value ? lpStyles.pickerBtnActive : {})
-          }}>
-          {i + 1}
-        </button>
-      )}
+    <div style={lpStyles.stepper} aria-label="sample selector">
+      <button onClick={prev} className="mono" style={{ ...lpStyles.stepperBtn, borderRight: "1px solid var(--rule)" }}>‹</button>
+      <div className="mono" style={lpStyles.stepperCenter}>
+        <div style={lpStyles.stepperLabel}>sample</div>
+        <div style={lpStyles.stepperValue}>{value + 1} <span style={lpStyles.stepperSlash}>/</span> {n}</div>
+      </div>
+      <button onClick={next} className="mono" style={{ ...lpStyles.stepperBtn, borderLeft: "1px solid var(--rule)" }}>›</button>
     </div>
   );
 }
@@ -966,20 +961,29 @@ const lpStyles = {
   btnPrimary: {
     background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
   },
-  picker: {
-    display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap",
-    background: "var(--panel)"
+  stepper: {
+    display: "inline-flex", alignItems: "stretch",
+    height: 56, overflow: "hidden",
+    background: "var(--panel)", border: "1px solid var(--rule)", borderRadius: 8
   },
-  pickerLabel: {
-    fontSize: 11, color: "var(--ink-3)", letterSpacing: 0.3, marginRight: 4
+  stepperBtn: {
+    width: 66, padding: 0,
+    fontSize: 30, fontWeight: 600,
+    color: "var(--ink-2)", background: "var(--bg-2)"
   },
-  pickerBtn: {
-    width: 30, height: 30, padding: 0,
-    fontSize: 11, color: "var(--ink-2)", background: "var(--bg-2)",
-    border: "1px solid var(--rule)", borderRadius: 5
+  stepperCenter: {
+    width: 158, display: "flex", flexDirection: "column",
+    alignItems: "center", justifyContent: "center",
+    padding: "4px 18px 6px", background: "var(--panel)"
   },
-  pickerBtnActive: {
-    background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
+  stepperLabel: {
+    fontSize: 14, lineHeight: 1.0, color: "var(--ink-3)", letterSpacing: 0.2
+  },
+  stepperValue: {
+    marginTop: 4, fontSize: 26, lineHeight: 1.0, fontWeight: 500, color: "var(--ink)"
+  },
+  stepperSlash: {
+    color: "var(--ink-2)", padding: "0 4px"
   },
 
   segGroup: {
