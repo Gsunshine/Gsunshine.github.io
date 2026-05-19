@@ -321,6 +321,15 @@ function RealSamples() {
 
   return (
     <section style={sampleStyles.wrap}>
+      <div style={sampleStyles.sectionIntro}>
+        <h2 style={sampleStyles.sectionH2}>Decoded text trajectory</h2>
+        <p style={sampleStyles.sectionLede}>
+          Left: a 32-step flow trajectory decoded from the intermediate z_t states. Right: the
+          corresponding one-step MeanFlow sample. The left-to-right flash marks words that changed
+          from the previous latent state, so the point is to compare the path of decoded stories,
+          not to show an autoregressive token loop.
+        </p>
+      </div>
       <div style={sampleStyles.sectionHeader}>
         <SamplePicker
           n={data.samples.length}
@@ -409,6 +418,10 @@ function SamplePicker({ n, value, onChange }) {
 // =============================================================
 const sampleStyles = {
   wrap: { marginTop: 40, paddingTop: 28, borderTop: "1px solid var(--rule-2)" },
+  sectionIntro: {
+    maxWidth: 880,
+    marginBottom: 18
+  },
   sectionHeader: {
     display: "flex", justifyContent: "space-between", alignItems: "flex-end",
     gap: 24, marginBottom: 18, flexWrap: "wrap"

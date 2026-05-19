@@ -751,6 +751,15 @@ function LatentPCA() {
 
   return (
     <section style={lpStyles.wrap}>
+      <div style={lpStyles.sectionHeader}>
+        <h2 style={lpStyles.sectionH2}>Latent-space trajectories</h2>
+        <p style={lpStyles.lede}>
+          Each dot is a generated latent projected into the same PCA plane. The Flow panel shows
+          many small updates from Gaussian noise toward the data manifold; MeanFlow tries to make
+          the same trip in one learned jump. Read this as a geometry check: does the one-step map
+          land in the same region as the multi-step trajectory?
+        </p>
+      </div>
 
       <div style={lpStyles.controls}>
         <PCASamplePicker
