@@ -635,38 +635,40 @@ function MeanPCAPanel({ proj, loadedSet, selectedSid, progress01, onSelect, dotS
 function LatentPCA() {
   const ctx = lpUseContext(window.TrajectoryContext);
   const { data: pcaData, err } = useLatentPCAData();
+  const exportPanel = window.__LT_PANEL || new URLSearchParams(window.location.search).get("panel");
+  const standaloneGeometry = exportPanel === "geometry";
 
   // PCA-section-local "play evolution" state — independent of the text reader.
   // progress01 maps 0..1 → fractional PCA step 0..32.
-  const [progress01, setProgress01] = lpUseState(1);
-  const [playing, setPlaying] = lpUseState(false);
-  const [durationMs, setDurationMs] = lpUseState(1600);
+  const [progress01, setProgress01] = lpUseState(standaloneGeometry ? 0 : 1);
+  const [playing, setPlaying] = lpUseState(standaloneGeometry);
+  const durationMs = 1600;
   // How many Flow solver steps the MF leap takes (in wall-clock units).
   //   1  = MF finishes within ONE Flow step (instant-ish, the lower bound)
   //   4  = MF takes 4 Flow steps to complete its leap (default — visible motion)
   //   32 = MF takes the entire run (matches Flow's pace)
   // Bigger number = slower MF (more visible leap).
-  const [mfStepCount, setMfStepCount] = lpUseState(3);
+  const mfStepCount = 3;
   // Particle size scaling — multiplies all dot radii live so the user
   // can dial in legibility without rebuilding the scene.
-  const [dotScale, setDotScale] = lpUseState(3.0);
+  const dotScale = 3.0;
   // Selected-sample pulse-head size relative to the global dotScale.
   // The pulse head is the moving frontier marker on the selected
   // sample; at headScale=1 it matches its baseline (which is already
   // larger than the static dots). Lower this if it feels too punchy.
-  const [headScale, setHeadScale] = lpUseState(0.5);
+  const headScale = 0.5;
   // Animate-view background dot scaling (the 256 moving particles in
   // the Flow + MF panels). Separate from dotScale so the global dot
   // size knob doesn't blow up the swarm.
-  const [bgScale, setBgScale] = lpUseState(4);
+  const bgScale = 4;
   // 'animate' = play-evolution view (default); 'fan' = static, time-coloured
-  const [view, setView] = lpUseState("animate");
+  const view = "animate";
   // How many measurement waypoints to display on the Flow trajectory.
   // The dense file gives us all 33 steps; we expose presets that
   // subsample it. The default "log" preset matches the original
   // sparse asset's spacing — denser near t=1 where the trajectory
   // moves fast, coarser later when it's settling.
-  const [waypointPreset, setWaypointPreset] = lpUseState("log");
+  const waypointPreset = "log";
   const VISIBLE_STEPS_BY_PRESET = {
     "log": [0, 1, 2, 4, 8, 16, 24, 32], // default — original asset spacing
     "32": Array.from({ length: 33 }, (_, i) => i), // every step 0..32
@@ -677,6 +679,8 @@ function LatentPCA() {
   const visibleSteps = VISIBLE_STEPS_BY_PRESET[waypointPreset];
   const rafRef = lpUseRef(null);
   const startRef = lpUseRef(0);
+  const loopTimerRef = lpUseRef(null);
+  const [localActive, setLocalActive] = lpUseState(standaloneGeometry);
 
   lpUseEffect(() => {
     if (!playing) return;
@@ -684,17 +688,31 @@ function LatentPCA() {
       if (!startRef.current) startRef.current = now;
       const u = Math.min(1, (now - startRef.current) / durationMs);
       setProgress01(u);
-      if (u < 1) rafRef.current = requestAnimationFrame(tick);else
-      setPlaying(false);
+      if (u < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        setPlaying(false);
+        if (standaloneGeometry) {
+          loopTimerRef.current = setTimeout(() => {
+            startRef.current = 0;
+            setProgress01(0);
+            setLocalActive(true);
+            setPlaying(true);
+          }, 1000);
+        }
+      }
     }
     rafRef.current = requestAnimationFrame(tick);
-    return () => {cancelAnimationFrame(rafRef.current);startRef.current = 0;};
-  }, [playing, durationMs]);
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      if (loopTimerRef.current) clearTimeout(loopTimerRef.current);
+      startRef.current = 0;
+    };
+  }, [playing, durationMs, standaloneGeometry]);
 
   // While the local play is idle, fall back to the text reader's stepIdx
   // so the two views stay coherent. Once user hits ▶ the local progress
   // takes over until it finishes.
-  const [localActive, setLocalActive] = lpUseState(false);
   const startLocalPlay = lpUseCallback(() => {
     setProgress01(0);
     setLocalActive(true);
@@ -702,8 +720,8 @@ function LatentPCA() {
   }, []);
   const resetLocalPlay = lpUseCallback(() => {
     setPlaying(false);
-    setProgress01(1);
-    setLocalActive(false);
+    setProgress01(0);
+    setLocalActive(true);
   }, []);
 
   // Effective fractional PCA step (Flow) and 0..1 progress (MF).
@@ -735,25 +753,21 @@ function LatentPCA() {
     <section style={lpStyles.wrap}>
 
       <div style={lpStyles.controls}>
-        <div style={lpStyles.segGroup}>
-          {[
-          { key: "animate", label: "▶ animate" },
-          { key: "fan", label: "🎨 time fan" }].
-          map((opt) =>
-          <button key={opt.key}
-          onClick={() => setView(opt.key)}
-          className="mono"
-          style={{
-            ...lpStyles.segBtn,
-            ...(view === opt.key ? lpStyles.segBtnActive : {})
-          }}>{opt.label}</button>
-          )}
-        </div>
+        <PCASamplePicker
+          n={ctx.loadedSampleIds.length}
+          value={ctx.sampleIdx}
+          onChange={(v) => {
+            ctx.setSampleIdx(v);
+            ctx.setStepIdx(0);
+            setProgress01(0);
+            setLocalActive(true);
+            setPlaying(true);
+          }} />
         <button onClick={playing ? () => setPlaying(false) : startLocalPlay}
         style={{ ...lpStyles.btn, ...lpStyles.btnPrimary }}>
-          {playing ? "❚❚ pause" : progress01 >= 1 ? "❚❚ pause" : "▶ resume"}
+          {playing ? "❚❚ pause" : "▶ play"}
         </button>
-        <button onClick={resetLocalPlay} style={lpStyles.btn} disabled={playing}>
+        <button onClick={resetLocalPlay} style={lpStyles.btn}>
           ⟲ reset
         </button>
         <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 220 }}>
@@ -768,92 +782,6 @@ function LatentPCA() {
           style={{ flex: 1 }} />
           <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 44 }}>
             {progress01.toFixed(2)}
-          </span>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}
-        title="Wall-clock duration for ONE Flow solver step. Total run = 32 × this.">
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>flow / step</span>
-          <input type="range" min={50} max={500} step={10}
-          value={Math.round(durationMs / 32)}
-          onChange={(e) => setDurationMs(parseInt(e.target.value) * 32)}
-          style={{ width: 120 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 72 }}>
-            {Math.round(durationMs / 32)}ms · 32×
-          </span>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--mean)" }}
-        title="How many Flow steps the MF leap takes. Lower = snappier MF; higher = MF visibly slower / matches Flow's pace.">
-          <span className="mono" style={{ fontSize: 11 }}>mf leap</span>
-          <input type="range" min={1} max={32} step={1}
-          value={mfStepCount}
-          onChange={(e) => setMfStepCount(parseInt(e.target.value))}
-          style={{ width: 100, accentColor: "var(--mean)" }} />
-          <span className="mono" style={{ fontSize: 11, minWidth: 88 }}>
-            {mfStepCount} step{mfStepCount === 1 ? "" : "s"} · {Math.round(durationMs / 32 * mfStepCount)}ms
-          </span>
-        </div>
-        <button onClick={() => {resetLocalPlay();setLocalActive(false);}}
-        className="mono"
-        style={{ ...lpStyles.btn, fontSize: 11, opacity: localActive ? 1 : 0.5 }}
-        title="Stop local playback and re-sync with text reader's step slider">
-          sync ↑
-        </button>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, borderLeft: "1px solid var(--rule)", paddingLeft: 12 }}>
-          <span className="mono"
-          style={{ fontSize: 11, color: "var(--ink-3)" }}
-          title="How many measurement waypoints to draw on the Flow trajectory polyline. We have PCA only for the 32-step solver run; this is visualization density, not solver NFE.">
-            waypoints
-          </span>
-          {["4", "8", "16", "32", "log"].map((p) =>
-          <button key={p}
-          onClick={() => setWaypointPreset(p)}
-          className="mono"
-          style={{
-            ...lpStyles.btn,
-            fontSize: 11,
-            padding: "6px 10px",
-            ...(waypointPreset === p ? lpStyles.btnPrimary : {})
-          }}>
-              {p}
-            </button>
-          )}
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, borderLeft: "1px solid var(--rule)", paddingLeft: 12 }}
-        title="Scale of every particle / waypoint dot in both panels.">
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>dot size</span>
-          <input type="range" min={5} max={50} step={1}
-          value={Math.round(dotScale * 10)}
-          onChange={(e) => setDotScale(parseInt(e.target.value) / 10)}
-          style={{ width: 100 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 36 }}>
-            {dotScale.toFixed(1)}×
-          </span>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}
-        title="Scale of the moving pulse-head on the selected sample, relative to dot size.">
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>head</span>
-          <input type="range" min={2} max={20} step={1}
-          value={Math.round(headScale * 10)}
-          onChange={(e) => setHeadScale(parseInt(e.target.value) / 10)}
-          style={{ width: 80 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 36 }}>
-            {headScale.toFixed(1)}×
-          </span>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}
-        title="Scale of the 256 background swarm particles in the animate view (Flow + MF panels).">
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>swarm</span>
-          <input type="range" min={2} max={40} step={1}
-          value={Math.round(bgScale * 10)}
-          onChange={(e) => setBgScale(parseInt(e.target.value) / 10)}
-          style={{ width: 80 }} />
-          <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 36 }}>
-            {bgScale.toFixed(1)}×
           </span>
         </div>
       </div>
@@ -888,6 +816,26 @@ function LatentPCA() {
 
 }
 
+function PCASamplePicker({ n, value, onChange }) {
+  return (
+    <div style={lpStyles.picker}>
+      <span className="mono" style={lpStyles.pickerLabel}>sample</span>
+      {Array.from({ length: n }, (_, i) =>
+        <button
+          key={i}
+          onClick={() => onChange(i)}
+          className="mono"
+          style={{
+            ...lpStyles.pickerBtn,
+            ...(i === value ? lpStyles.pickerBtnActive : {})
+          }}>
+          {i + 1}
+        </button>
+      )}
+    </div>
+  );
+}
+
 const lpStyles = {
   wrap: { marginTop: 56, paddingTop: 36, borderTop: "1px solid var(--rule-2)" },
   sectionHeader: { marginBottom: 18 },
@@ -914,6 +862,21 @@ const lpStyles = {
     background: "var(--bg-2)", color: "var(--ink)"
   },
   btnPrimary: {
+    background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
+  },
+  picker: {
+    display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap",
+    background: "var(--panel)"
+  },
+  pickerLabel: {
+    fontSize: 11, color: "var(--ink-3)", letterSpacing: 0.3, marginRight: 4
+  },
+  pickerBtn: {
+    width: 30, height: 30, padding: 0,
+    fontSize: 11, color: "var(--ink-2)", background: "var(--bg-2)",
+    border: "1px solid var(--rule)", borderRadius: 5
+  },
+  pickerBtnActive: {
     background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
   },
 
