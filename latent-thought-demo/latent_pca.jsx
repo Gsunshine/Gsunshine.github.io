@@ -952,27 +952,27 @@ function PCASamplePicker({ n, value, onChange }) {
 }
 
 const lpStyles = {
-  wrap: { marginTop: 56, paddingTop: 36, borderTop: "1px solid var(--rule-2)" },
-  sectionHeader: { marginBottom: 18 },
+  wrap: { marginTop: 28, paddingTop: 18, borderTop: "1px solid var(--rule-2)" },
+  sectionHeader: { marginBottom: 10 },
   sectionH2: {
-    fontFamily: "var(--serif)", fontSize: 28, fontWeight: 500, margin: "6px 0 8px",
+    fontFamily: "var(--serif)", fontSize: 26, fontWeight: 500, margin: "4px 0 6px",
     letterSpacing: -0.3, color: "var(--ink)"
   },
   lede: {
-    maxWidth: 880, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.55,
+    maxWidth: 880, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.48,
     margin: 0, textWrap: "pretty"
   },
 
   controls: {
-    marginTop: 18, marginBottom: 14,
-    display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap",
-    padding: "12px 14px",
+    marginTop: 10, marginBottom: 8,
+    display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap",
+    padding: "8px 10px",
     background: "var(--panel)",
     border: "1px solid var(--rule)",
     borderRadius: 8
   },
   btn: {
-    fontFamily: "var(--mono)", fontSize: 12, padding: "8px 12px",
+    fontFamily: "var(--mono)", fontSize: 12, padding: "7px 10px",
     border: "1px solid var(--rule)", borderRadius: 5,
     background: "var(--bg-2)", color: "var(--ink)"
   },
@@ -1013,7 +1013,7 @@ const lpStyles = {
   },
   segBtnActive: { background: "var(--ink)", color: "var(--bg)" },
 
-  grid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 },
+  grid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 },
   panel: {
     background: "var(--panel)",
     border: "1px solid var(--rule)",
@@ -1023,20 +1023,20 @@ const lpStyles = {
   },
   panelHeader: {
     display: "flex", justifyContent: "space-between", alignItems: "flex-start",
-    padding: "14px 18px 12px",
+    padding: "10px 14px 9px",
     borderBottom: "1px solid var(--rule-2)",
-    gap: 16
+    gap: 14
   },
   headerRow: { display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" },
   h3: { fontSize: 16, margin: 0, fontWeight: 500, letterSpacing: -0.1 },
   sub: { color: "var(--ink-3)", fontSize: 11.5, marginTop: 4 },
 
-  svgWrap: { padding: "10px 6px", background: "var(--bg-2)", borderBottom: "1px solid var(--rule-2)" },
-  svg: { width: "100%", height: 420, display: "block" },
+  svgWrap: { padding: "6px 4px", background: "var(--bg-2)", borderBottom: "1px solid var(--rule-2)" },
+  svg: { width: "100%", height: 360, display: "block" },
 
   legend: {
-    padding: "10px 16px",
-    display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap"
+    padding: "7px 12px",
+    display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap"
   },
   legendItem: { display: "inline-flex", alignItems: "center", gap: 6, fontSize: 11, color: "var(--ink-2)" },
   legendSwatch: { display: "inline-block", width: 10, height: 10, borderRadius: 2 }
