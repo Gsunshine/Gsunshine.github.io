@@ -66,7 +66,7 @@ const appStyles = {
   root: {
     maxWidth: 1400,
     margin: "0 auto",
-    padding: "32px 28px 48px",
+    padding: "18px 22px 26px",
   },
 };
 

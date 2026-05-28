@@ -74,15 +74,15 @@ const appStyles = {
   root: {
     maxWidth: 1400,
     margin: "0 auto",
-    padding: "32px 28px 48px",
+    padding: "18px 22px 26px",
   },
   textRoot: {
-    paddingTop: 16,
-    paddingBottom: 20,
+    paddingTop: 10,
+    paddingBottom: 14,
   },
   geometryRoot: {
-    paddingTop: 8,
-    paddingBottom: 20,
+    paddingTop: 4,
+    paddingBottom: 14,
   },
 };
 

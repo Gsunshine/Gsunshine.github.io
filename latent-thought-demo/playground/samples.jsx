@@ -416,28 +416,28 @@ function SamplePicker({ n, value, onChange }) {
 // Styles
 // =============================================================
 const sampleStyles = {
-  wrap: { marginTop: 40, paddingTop: 28, borderTop: "1px solid var(--rule-2)" },
+  wrap: { marginTop: 20, paddingTop: 16, borderTop: "1px solid var(--rule-2)" },
   sectionIntro: {
     maxWidth: 880,
-    marginBottom: 18
+    marginBottom: 10
   },
   sectionHeader: {
     display: "flex", justifyContent: "space-between", alignItems: "flex-end",
-    gap: 24, marginBottom: 18, flexWrap: "wrap"
+    gap: 16, marginBottom: 10, flexWrap: "wrap"
   },
   sectionH2: {
-    fontFamily: "var(--serif)", fontSize: 28, fontWeight: 500, margin: "6px 0 6px",
+    fontFamily: "var(--serif)", fontSize: 26, fontWeight: 500, margin: "4px 0 4px",
     letterSpacing: -0.3, color: "var(--ink)"
   },
   sectionLede: {
-    maxWidth: 760, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.55,
+    maxWidth: 760, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.48,
     margin: 0, textWrap: "pretty"
   },
 
   grid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    gap: 18
+    gap: 14
   },
   panel: {
     background: "var(--panel)",
@@ -448,25 +448,25 @@ const sampleStyles = {
   },
   panelHeader: {
     display: "flex", justifyContent: "space-between", alignItems: "flex-start",
-    padding: "16px 18px 14px", borderBottom: "1px solid var(--rule-2)",
-    gap: 16
+    padding: "10px 14px 9px", borderBottom: "1px solid var(--rule-2)",
+    gap: 14
   },
   h2: { fontSize: 18, margin: 0, fontWeight: 500, letterSpacing: -0.1 },
 
   ribbon: {
-    padding: "10px 16px",
+    padding: "7px 12px",
     background: "var(--bg-2)",
     borderBottom: "1px solid var(--rule-2)",
     display: "flex", alignItems: "center"
   },
 
   textBody: {
-    padding: "18px 22px 22px",
+    padding: "12px 16px 16px",
     fontFamily: "var(--serif)",
     fontSize: 14.5,
-    lineHeight: 1.65,
+    lineHeight: 1.54,
     color: "var(--ink)",
-    minHeight: 280,
+    minHeight: 240,
     maxHeight: 520,
     overflow: "auto",
     whiteSpace: "pre-wrap",
@@ -474,15 +474,15 @@ const sampleStyles = {
   },
 
   controls: {
-    marginTop: 18,
-    display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap",
-    padding: "12px 14px",
+    marginTop: 10,
+    display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap",
+    padding: "8px 10px",
     background: "var(--panel)",
     border: "1px solid var(--rule)",
     borderRadius: 8
   },
   btn: {
-    fontFamily: "var(--mono)", fontSize: 12, padding: "8px 12px",
+    fontFamily: "var(--mono)", fontSize: 12, padding: "7px 10px",
     border: "1px solid var(--rule)", borderRadius: 5,
     background: "var(--bg-2)", color: "var(--ink)"
   },
