@@ -11,7 +11,7 @@
 // JiT readout flash left-to-right, which makes the edit path more
 // readable than position-wise replacement.
 
-const { useEffect, useMemo, useRef, useState, useContext } = React;
+const { useMemo, useState, useContext } = React;
 
 // Pulls the shared trajectory bundle + selection state from the App-level
 // TrajectoryContext. We used to fetch trajectory.json locally; now App owns it.
@@ -247,10 +247,9 @@ function RealSamples() {
   const data = ctx?.data;
   const sampleIdx = ctx?.sampleIdx ?? 0;
   const stepIdx = ctx?.stepIdx ?? 0;
-  const setSampleIdx = ctx?.setSampleIdx;
-  const setStepIdx = ctx?.setStepIdx;
-  const [playing, setPlaying] = useState(true);
-  const [stepDurationMs] = useState(200); // fixed export pace; shared by both panels
+  const playing = ctx?.autoPlaying ?? true;
+  const setPlaying = ctx?.setAutoPlaying;
+  const stepDurationMs = ctx?.stepDurationMs ?? 200; // fixed export pace; shared by both panels
   // Which decoded state to show on the Flow side:
   //   "x0"  — x̂₀: the model's current clean-latent estimate
   //   "zt"  — z_t: the noisy solver state at that step
@@ -260,38 +259,6 @@ function RealSamples() {
   // dial in the right visual rhythm before locking the defaults.
   const [flashDurMs] = useState(260);
   const [flashStaggerMs] = useState(4);
-  const rafRef = useRef(null);
-  const startRef = useRef(0);
-
-  // Autoplay step animation — ticks at exactly stepDurationMs per
-  // solver step, so wall-clock time is shared between Flow and MF.
-  useEffect(() => {
-    if (!playing || !data) return;
-    let loopTimer = null;
-    function step(now) {
-      if (!startRef.current) startRef.current = now;
-      const elapsed = now - startRef.current;
-      const total = data.metadata.jit_num_steps;
-      const s = Math.min(total, Math.floor(elapsed / stepDurationMs));
-      setStepIdx(s);
-      if (s < total) {
-        rafRef.current = requestAnimationFrame(step);
-      } else {
-        setPlaying(false);
-        loopTimer = setTimeout(() => {
-          startRef.current = 0;
-          setStepIdx(0);
-          setPlaying(true);
-        }, 1200);
-      }
-    }
-    rafRef.current = requestAnimationFrame(step);
-    return () => {
-      cancelAnimationFrame(rafRef.current);
-      if (loopTimer) clearTimeout(loopTimer);
-      startRef.current = 0;
-    };
-  }, [playing, stepDurationMs, data]);
 
   if (!ctx || !data) return <div className="mono" style={{ color: "var(--ink-3)", padding: 20 }}>Loading real samples…</div>;
 
@@ -334,20 +301,15 @@ function RealSamples() {
           n={data.samples.length}
           value={sampleIdx}
           onChange={(v) => {
-            setSampleIdx(v);
-            setStepIdx(0);
-            startRef.current = 0;
-            setPlaying(true);
+            ctx.selectSampleIdx?.(v, true);
           }} />
         <div style={sampleStyles.compactControls}>
           <button
             onClick={() => {
               if (playing) {
-                setPlaying(false);
+                setPlaying?.(false);
               } else {
-                setStepIdx(0);
-                startRef.current = 0;
-                setPlaying(true);
+                ctx.restartAutoCycle?.();
               }
             }}
             style={{ ...sampleStyles.btn, ...sampleStyles.btnPrimary }}>
@@ -355,9 +317,7 @@ function RealSamples() {
           </button>
           <button
             onClick={() => {
-              setPlaying(false);
-              setStepIdx(0);
-              startRef.current = 0;
+              ctx.resetAutoCycle?.();
             }}
             style={sampleStyles.btn}>
             ⟲ reset

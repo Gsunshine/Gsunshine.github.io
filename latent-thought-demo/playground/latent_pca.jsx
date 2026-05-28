@@ -647,10 +647,11 @@ function LatentPCA() {
   const exportPanel = window.__LT_PANEL || new URLSearchParams(window.location.search).get("panel");
   const standaloneGeometry = exportPanel === "geometry";
 
-  // PCA-section-local "play evolution" state — independent of the text reader.
+  // PCA can either follow the shared App-level sample clock or run a
+  // local one-off animation after direct manipulation.
   // progress01 maps 0..1 → fractional PCA step 0..32.
-  const [progress01, setProgress01] = lpUseState(standaloneGeometry ? 0 : 1);
-  const [playing, setPlaying] = lpUseState(standaloneGeometry);
+  const [progress01, setProgress01] = lpUseState(0);
+  const [playing, setPlaying] = lpUseState(false);
   const durationMs = 1600;
   // How many Flow solver steps the MF leap takes (in wall-clock units).
   //   1  = MF finishes within ONE Flow step (instant-ish, the lower bound)
@@ -689,7 +690,7 @@ function LatentPCA() {
   const rafRef = lpUseRef(null);
   const startRef = lpUseRef(0);
   const loopTimerRef = lpUseRef(null);
-  const [localActive, setLocalActive] = lpUseState(standaloneGeometry);
+  const [localActive, setLocalActive] = lpUseState(false);
 
   lpUseEffect(() => {
     if (!playing) return;
@@ -743,6 +744,9 @@ function LatentPCA() {
   //                 then sits motionless until Flow catches up.
   const txtStepIdx = ctx?.stepIdx ?? 32;
   const txtTotal = ctx?.total ?? 32;
+  const globalProgress01 = Math.min(1, txtStepIdx / txtTotal);
+  const displayProgress01 = localActive ? progress01 : globalProgress01;
+  const visualPlaying = localActive ? playing : ctx?.autoPlaying ?? false;
   const pcaStep = localActive ?
   progress01 * 32 :
   txtStepIdx;
@@ -775,11 +779,10 @@ function LatentPCA() {
           n={ctx.loadedSampleIds.length}
           value={ctx.sampleIdx}
           onChange={(v) => {
-            ctx.setSampleIdx(v);
-            ctx.setStepIdx(0);
+            ctx.selectSampleIdx?.(v, true);
             setProgress01(0);
-            setLocalActive(true);
-            setPlaying(true);
+            setLocalActive(false);
+            setPlaying(false);
           }} />
         <div style={lpStyles.segGroup}>
           {[
@@ -795,25 +798,40 @@ function LatentPCA() {
           }}>{opt.label}</button>
           )}
         </div>
-        <button onClick={playing ? () => setPlaying(false) : startLocalPlay}
+        <button onClick={visualPlaying ?
+        () => {
+          if (localActive) setPlaying(false);else ctx.setAutoPlaying?.(false);
+        } :
+        () => {
+          setLocalActive(false);
+          setPlaying(false);
+          ctx.restartAutoCycle?.();
+        }}
         style={{ ...lpStyles.btn, ...lpStyles.btnPrimary }}>
-          {playing ? "❚❚ pause" : "▶ play"}
+          {visualPlaying ? "❚❚ pause" : "▶ play"}
         </button>
-        <button onClick={resetLocalPlay} style={lpStyles.btn}>
+        <button onClick={() => {
+          setLocalActive(false);
+          setPlaying(false);
+          ctx.resetAutoCycle?.();
+        }} style={lpStyles.btn}>
           ⟲ reset
         </button>
         <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 220 }}>
           <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>progress</span>
           <input type="range" min={0} max={1000} step={1}
-          value={Math.round(progress01 * 1000)}
+          value={Math.round(displayProgress01 * 1000)}
           onChange={(e) => {
+            const nextProgress = parseInt(e.target.value) / 1000;
             setPlaying(false);
-            setLocalActive(true);
-            setProgress01(parseInt(e.target.value) / 1000);
+            setLocalActive(false);
+            setProgress01(nextProgress);
+            ctx.setAutoPlaying?.(false);
+            ctx.setStepIdx?.(Math.round(nextProgress * txtTotal));
           }}
           style={{ flex: 1 }} />
           <span className="mono" style={{ fontSize: 11, color: "var(--ink-2)", minWidth: 44 }}>
-            {progress01.toFixed(2)}
+            {displayProgress01.toFixed(2)}
           </span>
         </div>
       </div>
