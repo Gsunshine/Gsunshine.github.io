@@ -775,15 +775,6 @@ function LatentPCA() {
       </div>
 
       <div style={lpStyles.controls}>
-        <PCASamplePicker
-          n={ctx.loadedSampleIds.length}
-          value={ctx.sampleIdx}
-          onChange={(v) => {
-            ctx.selectSampleIdx?.(v, true);
-            setProgress01(0);
-            setLocalActive(false);
-            setPlaying(false);
-          }} />
         <div style={lpStyles.segGroup}>
           {[
           { key: "fan", label: "time color" },
@@ -866,21 +857,6 @@ function LatentPCA() {
 
 }
 
-function PCASamplePicker({ n, value, onChange }) {
-  const prev = () => onChange((value - 1 + n) % n);
-  const next = () => onChange((value + 1) % n);
-  return (
-    <div style={lpStyles.stepper} aria-label="sample selector">
-      <button onClick={prev} className="mono" style={{ ...lpStyles.stepperBtn, borderRight: "1px solid var(--rule)" }}>‹</button>
-      <div className="mono" style={lpStyles.stepperCenter}>
-        <div style={lpStyles.stepperLabel}>sample</div>
-        <div style={lpStyles.stepperValue}>{value + 1} <span style={lpStyles.stepperSlash}>/</span> {n}</div>
-      </div>
-      <button onClick={next} className="mono" style={{ ...lpStyles.stepperBtn, borderLeft: "1px solid var(--rule)" }}>›</button>
-    </div>
-  );
-}
-
 const lpStyles = {
   wrap: { marginTop: 28, paddingTop: 18, borderTop: "1px solid var(--rule-2)" },
   sectionHeader: { marginBottom: 10 },
@@ -909,31 +885,6 @@ const lpStyles = {
   btnPrimary: {
     background: "var(--ink)", color: "var(--bg)", borderColor: "var(--ink)"
   },
-  stepper: {
-    display: "flex", alignItems: "stretch",
-    overflow: "hidden",
-    background: "var(--panel)", border: "1px solid var(--rule)", borderRadius: 6
-  },
-  stepperBtn: {
-    width: 36, padding: 0,
-    fontSize: 18,
-    color: "var(--ink-2)", background: "var(--bg-2)"
-  },
-  stepperCenter: {
-    display: "flex", flexDirection: "column",
-    alignItems: "center", justifyContent: "center",
-    padding: "0 14px", background: "var(--panel)", textAlign: "center"
-  },
-  stepperLabel: {
-    fontSize: 10, lineHeight: 1.2, color: "var(--ink-3)", letterSpacing: 0.2
-  },
-  stepperValue: {
-    marginTop: 1, fontSize: 14, lineHeight: 1.25, fontWeight: 500, color: "var(--ink)"
-  },
-  stepperSlash: {
-    color: "var(--ink-2)", padding: "0 2px"
-  },
-
   segGroup: {
     display: "inline-flex", border: "1px solid var(--rule)", borderRadius: 5, overflow: "hidden"
   },
