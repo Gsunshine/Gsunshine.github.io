@@ -73,14 +73,15 @@ Selected Works
 <div class="works-group__content" markdown="1">
 
 <div class="works-subgroup" markdown="1">
-- One-step Latent-free Image Generation with Pixel Mean Flows <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=report">Tech Report</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
-  Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, Tianhong Li, **Zhengyang Geng**, and Kaiming He <br>
-  **TL;DR**: One-step image generation directly in pixel space. <br>
+- One-step Latent-free Image Generation with Pixel Mean Flows <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=icml">ICML</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
+  Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, <br>
+  <span class="pub-author-continuation">Tianhong Li, <strong>Zhengyang Geng</strong>, and Kaiming He</span> <br>
+  **TL;DR**: Modeling low-dim data manifold in high-dim space with Mean Flows. <br>
   [[Paper](https://arxiv.org/abs/2601.22158)] [[Code](https://github.com/Lyy-iiis/pMF)]
 
-- Improved Mean Flows: On the Challenges of Fastforward Generative Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
+- Improved Mean Flows: On the Challenges of Fastforward Generative Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <span class="pub-badge pub-badge--highlight">Highlight</span> <br>
   **Zhengyang Geng**\*, Yiyang Lu\*, Zongze Wu, Eli Shechtman, J. Zico Kolter, and Kaiming He <br>
-  **TL;DR**: Stability, Flexibility, and Architecture for Mean Flows. <br>
+  **TL;DR**: Stability, flexibility, and architecture for Mean Flows. <br>
   [[Paper](https://arxiv.org/abs/2512.02012)] [[Code](https://github.com/Lyy-iiis/imeanflow)]
 
 - Mean Flows for One-step Generative Modeling <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2025">2025</a> <span class="pub-badge pub-badge--oral">Oral</span> <br>
@@ -90,7 +91,7 @@ Selected Works
 
 - Consistency Models Made Easy <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=iclr">ICLR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2025">2025</a> <br>
   **Zhengyang Geng**, William Luo, Ashwini Pokle, and J. Zico Kolter <br>
-  **TL;DR**: Easy Consistency Tuning through Self Teacher. <br>
+  **TL;DR**: Easy consistency tuning through self teacher. <br>
   [[Paper](https://arxiv.org/abs/2406.14548)] [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)]
 
 - 1-Step Diffusion Distillation via Deep Equilibrium Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2023">2023</a> <br>
@@ -128,8 +129,13 @@ Selected Works
 </details>
 
 <details class="works-group" markdown="1">
-<summary><span class="works-group__head"><span class="works-group__title">Neural Attractors & Deep Equilibrium Models</span><span class="works-group__tag">towards &infin;-step</span></span></summary>
+<summary><span class="works-group__head"><span class="works-group__title">Neural Attractors & Adaptive Computation</span><span class="works-group__tag">towards &infin;-step</span></span></summary>
 <div class="works-group__content" markdown="1">
+
+- Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=icml">ICML</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
+  Benhao Huang, **Zhengyang Geng**<sup>†</sup>, and J. Zico Kolter <br>
+  **TL;DR**: Task-conditioned attractors enable scalable latent reasoning. <br>
+  [[Paper](https://arxiv.org/abs/2605.21488)] [[Code](https://github.com/locuslab/eqr)]
 
 - <img src="/images/TorchDEQ_Logo.gif" alt="TorchDEQ Logo" width="44" style="vertical-align:middle;margin-right:8px;"> TorchDEQ: A Library for Deep Equilibrium Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=report">Tech Report</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2023">2023</a> <br>
   **Zhengyang Geng** and J. Zico Kolter <br>

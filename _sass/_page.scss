@@ -709,6 +709,13 @@
   margin-left: 0.24rem;
 }
 
+.pub-author-continuation {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: calc(100% - 1rem);
+  padding-left: 1rem;
+}
+
 .pub-badge {
   display: inline-block;
   margin-left: 0.26rem;
@@ -731,6 +738,12 @@
   border: 1px solid #eac58c;
   background: #fff2de;
   color: #7d4c00;
+}
+
+.pub-badge--highlight {
+  border: 1px solid #d7a7cf;
+  background: #fbf0fa;
+  color: #7a2f68;
 }
 
 .proj-filter {
@@ -780,6 +793,11 @@
     margin-top: 0.2rem;
     margin-left: 0;
     font-size: 0.66rem;
+  }
+
+  .pub-author-continuation {
+    max-width: calc(100% - 0.75rem);
+    padding-left: 0.75rem;
   }
 }
 

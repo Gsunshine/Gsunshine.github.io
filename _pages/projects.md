@@ -12,15 +12,21 @@ Full List (Chronological)
 
 ### 2026
 
-- Improved Mean Flows: On the Challenges of Fastforward Generative Models <span class="proj-filter" data-venue="cvpr" data-year="2026"></span> \
+- Improved Mean Flows: On the Challenges of Fastforward Generative Models <span class="proj-filter" data-venue="cvpr" data-year="2026"></span> <span class="pub-badge pub-badge--highlight">Highlight</span> \
   **Zhengyang Geng**\*, Yiyang Lu\*, Zongze Wu, Eli Shechtman, J. Zico Kolter, and Kaiming He \
   **TL;DR**: Diagnosing and improving failure modes of fast one-step generative models. \
   [[Paper](https://arxiv.org/abs/2512.02012)] [[Code](https://github.com/Lyy-iiis/imeanflow)]
 
-- One-step Latent-free Image Generation with Pixel Mean Flows <span class="proj-filter" data-venue="report" data-year="2026"></span> \
-  Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, Tianhong Li, **Zhengyang Geng**, and Kaiming He \
+- One-step Latent-free Image Generation with Pixel Mean Flows <span class="proj-filter" data-venue="icml" data-year="2026"></span> \
+  Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, \
+  <span class="pub-author-continuation">Tianhong Li, <strong>Zhengyang Geng</strong>, and Kaiming He</span> \
   **TL;DR**: One-step latent-free image generation directly in pixel space. \
   [[Paper](https://arxiv.org/abs/2601.22158)] [[Code](https://github.com/Lyy-iiis/pMF)]
+
+- Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning <span class="proj-filter" data-venue="icml" data-year="2026"></span> \
+  Benhao Huang, **Zhengyang Geng**<sup>†</sup>, and J. Zico Kolter \
+  **TL;DR**: Task-conditioned attractors enable scalable latent reasoning. \
+  [[Paper](https://arxiv.org/abs/2605.21488)] [[Code](https://github.com/locuslab/eqr)]
 
 ### 2025
 
