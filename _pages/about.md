@@ -3,6 +3,7 @@ permalink: /
 title: "About me"
 excerpt: "About me"
 author_profile: true
+classes: home-page
 redirect_from: 
   - /about/
   - /about.html
@@ -79,7 +80,7 @@ Selected Works
   **TL;DR**: Modeling low-dim data manifold in high-dim space with Mean Flows. <br>
   [[Paper](https://arxiv.org/abs/2601.22158)] [[Code](https://github.com/Lyy-iiis/pMF)]
 
-- Improved Mean Flows: On the Challenges of Fastforward Generative Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <span class="pub-badge pub-badge--highlight">Highlight</span> <br>
+- Improved Mean Flows <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <span class="pub-badge pub-badge--highlight">Highlight</span> <span class="pub-badge pub-badge--compute">Compute Transparency Champion</span> <br>
   **Zhengyang Geng**\*, Yiyang Lu\*, Zongze Wu, Eli Shechtman, J. Zico Kolter, and Kaiming He <br>
   **TL;DR**: Stability, flexibility, and architecture for Mean Flows. <br>
   [[Paper](https://arxiv.org/abs/2512.02012)] [[Code](https://github.com/Lyy-iiis/imeanflow)]
@@ -92,17 +93,17 @@ Selected Works
 - Consistency Models Made Easy <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=iclr">ICLR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2025">2025</a> <br>
   **Zhengyang Geng**, William Luo, Ashwini Pokle, and J. Zico Kolter <br>
   **TL;DR**: Easy consistency tuning through self teacher. <br>
-  [[Paper](https://arxiv.org/abs/2406.14548)] [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)]
+  [[Paper](https://arxiv.org/abs/2406.14548)] [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTeX](/assets/bib/ect.bib)]
 
 - 1-Step Diffusion Distillation via Deep Equilibrium Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2023">2023</a> <br>
   **Zhengyang Geng**\*, Ashwini Pokle\*, and J. Zico Kolter <br>
   **TL;DR**: Equilibrium Transformer + offline distillation for one-step diffusion. <br>
-  [[Paper](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)]
+  [[Paper](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTeX](/assets/bib/deq-diffusion.bib)]
 
 - Deep Equilibrium Approaches To Diffusion Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2022">2022</a> <br>
   Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter <br>
   **TL;DR**: Parallel diffusion decoding via fixed-point equations. <br>
-  [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)]
+  [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTeX](/assets/bib/deq-diffusion.bib)]
 
 </div>
 
@@ -145,17 +146,17 @@ Selected Works
 - Deep Equilibrium Optical Flow Estimation <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=cvpr">CVPR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2022">2022</a> <br>
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, and J. Zico Kolter <br>
   **TL;DR**: Harder problems, more compute, better convergence and performance. <br>
-  [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)]
+  [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTeX](/assets/bib/deq-flow.bib)]
 
 - On Training Implicit Models <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=neurips">NeurIPS</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2021">2021</a> <br>
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, and Zhouchen Lin <br>
   **TL;DR**: Inexact gradient training can be cheap, fast, and stable. <br>
-  [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)]
+  [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTeX](/assets/bib/phantom_grad.bib)]
 
 - Is Attention Better Than Matrix Decomposition? <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=iclr">ICLR</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2021">2021</a> <span class="pub-badge pub-badge--top">Top 3%</span> <br>
   **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, and Zhouchen Lin <br>
   **TL;DR**: Optimization (matrix decomposition) as attention. <br>
-  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)]
+  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTeX](/assets/bib/ham.bib)]
 
 </div>
 </details>

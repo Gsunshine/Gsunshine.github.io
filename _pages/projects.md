@@ -12,7 +12,7 @@ Full List (Chronological)
 
 ### 2026
 
-- Improved Mean Flows: On the Challenges of Fastforward Generative Models <span class="proj-filter" data-venue="cvpr" data-year="2026"></span> <span class="pub-badge pub-badge--highlight">Highlight</span> \
+- Improved Mean Flows <span class="proj-filter" data-venue="cvpr" data-year="2026"></span> <span class="pub-badge pub-badge--highlight">Highlight</span> <span class="pub-badge pub-badge--compute">Compute Transparency Champion</span> \
   **Zhengyang Geng**\*, Yiyang Lu\*, Zongze Wu, Eli Shechtman, J. Zico Kolter, and Kaiming He \
   **TL;DR**: Diagnosing and improving failure modes of fast one-step generative models. \
   [[Paper](https://arxiv.org/abs/2512.02012)] [[Code](https://github.com/Lyy-iiis/imeanflow)]
@@ -38,7 +38,7 @@ Full List (Chronological)
 - Consistency Models Made Easy <span class="proj-filter" data-venue="iclr" data-year="2025"></span> \
   **Zhengyang Geng**, William Luo, Ashwini Pokle, and J. Zico Kolter \
   **TL;DR**: Easy Consistency Tuning through Self Teacher. \
-  [[Paper](https://arxiv.org/abs/2406.14548)] [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ect.bib)]
+  [[Paper](https://arxiv.org/abs/2406.14548)] [[Blog](https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc?pvs=4)] [[Code](https://github.com/locuslab/ect)] [[BibTeX](/assets/bib/ect.bib)]
 
 - Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models <span class="proj-filter" data-venue="icml" data-year="2025"></span> \
   Weijian Luo, Colin Zhang, Debing Zhang, and **Zhengyang Geng** \
@@ -67,46 +67,46 @@ Full List (Chronological)
 - 1-Step Diffusion Distillation via Deep Equilibrium Models <span class="proj-filter" data-venue="neurips" data-year="2023"></span> \
   **Zhengyang Geng**\*, Ashwini Pokle\*, and J. Zico Kolter \
   **TL;DR**: Generative Equilibrium Transformer (GET) as a strong 1-step diffusion learner. \
-  [[Paper](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)]
+  [[Paper](https://openreview.net/pdf?id=f9eVDYrKXI)] [[Code](https://github.com/locuslab/get)] [[BibTeX](/assets/bib/deq-diffusion.bib)]
 
 - Equilibrium Image Denoising With Implicit Differentiation <span class="proj-filter" data-venue="tip" data-year="2023"></span> \
   Qi Chen, Yifei Wang, **Zhengyang Geng**, Yisen Wang, Jiansheng Yang, and Zhouchen Lin \
   **TL;DR**: Equilibrium image denoising with implicit differentiation. \
-  [[Paper](https://ieeexplore.ieee.org/abstract/document/100705887)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/nerd.bib)]
+  [[Paper](https://ieeexplore.ieee.org/abstract/document/100705887)] [[BibTeX](/assets/bib/nerd.bib)]
 
 ### 2022
 
 - Deep Equilibrium Approaches To Diffusion Models <span class="proj-filter" data-venue="neurips" data-year="2022"></span> \
   Ashwini Pokle, **Zhengyang Geng**, and J. Zico Kolter \
   **TL;DR**: Parallel diffusion decoding via fixed-point equations. \
-  [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-diffusion.bib)]
+  [[Paper](https://arxiv.org/abs/2210.12867)] [[Code](https://github.com/locuslab/deq-ddim)] [[BibTeX](/assets/bib/deq-diffusion.bib)]
 
 - Eliminating Gradient Conflict in Reference-based Line-art Colorization <span class="proj-filter" data-venue="eccv" data-year="2022"></span> \
   Zekun Li, **Zhengyang Geng**, Zhao Kang, Wenyu Chen, and Yibo Yang \
   **TL;DR**: Investigating and alleviating gradient conflicts in attention training. \
-  [[Paper](https://arxiv.org/abs/2207.06095)] [[Code](https://github.com/kunkun0w0/SGA)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/sga.bib)]
+  [[Paper](https://arxiv.org/abs/2207.06095)] [[Code](https://github.com/kunkun0w0/SGA)] [[BibTeX](/assets/bib/sga.bib)]
 
 - Deep Equilibrium Optical Flow Estimation <span class="proj-filter" data-venue="cvpr" data-year="2022"></span> \
   Shaojie Bai\*, **Zhengyang Geng**\*, Yash Savani, and J. Zico Kolter \
   **TL;DR**: Harder problems, more compute, better convergence and performance. \
-  [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/deq-flow.bib)]
+  [[Paper](https://arxiv.org/abs/2204.08442)] [[Code](https://github.com/locuslab/deq-flow)] [[BibTeX](/assets/bib/deq-flow.bib)]
 
 ### 2021
 
 - On Training Implicit Models <span class="proj-filter" data-venue="neurips" data-year="2021"></span> \
   **Zhengyang Geng**\*, Xin-Yu Zhang\*, Shaojie Bai, Yisen Wang, and Zhouchen Lin \
   **TL;DR**: Inexact gradient training can be cheap, fast, and stable. \
-  [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/phantom_grad.bib)]
+  [[Paper](https://arxiv.org/pdf/2111.05177.pdf)] [[Slides](/assets/slides/2021_NeurIPS_On_Training_Implicit_Models_slides.pdf)] [[Poster](/assets/poster/2021_NeurIPS_On_Training_Implicit_Models_poster.pdf)] [[Code](https://github.com/Gsunshine/phantom_grad)] [[BibTeX](/assets/bib/phantom_grad.bib)]
 
 - Residual Relaxation for Multi-view Representation Learning <span class="proj-filter" data-venue="neurips" data-year="2021"></span> \
   Yifei Wang, **Zhengyang Geng**, Feng Jiang, Chuming Li, Yisen Wang, Jiansheng Yang, and Zhouchen Lin \
   **TL;DR**: Equivariant contrastive learning replaces invariant contrastive learning. \
-  [[Paper](https://arxiv.org/pdf/2110.15348.pdf)] [[Slides](https://yifeiwang77.github.io/files/slides/NeurIPS2021_Prelax_slides.pdf)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/prelax.bib)]
+  [[Paper](https://arxiv.org/pdf/2110.15348.pdf)] [[Slides](https://yifeiwang77.github.io/files/slides/NeurIPS2021_Prelax_slides.pdf)] [[BibTeX](/assets/bib/prelax.bib)]
 
 - Is Attention Better Than Matrix Decomposition? <span class="proj-filter" data-venue="iclr" data-year="2021"></span> \
   **Zhengyang Geng**\*, Meng-Hao Guo\*, Hongxu Chen, Xia Li, Ke Wei, and Zhouchen Lin \
   **TL;DR**: Optimization (matrix decomposition) as attention. \
-  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTeX](https://github.com/Gsunshine/Gsunshine.github.io/blob/master/assets/bib/ham.bib)]
+  [[Paper](https://arxiv.org/pdf/2109.04553.pdf)] [[Code](https://github.com/Gsunshine/Enjoy-Hamburger)] [Blog Series [1 (zh)](https://zhuanlan.zhihu.com/p/369769485), [2 (zh)](https://zhuanlan.zhihu.com/p/369855045), [3 (zh)](https://zhuanlan.zhihu.com/p/370410446)] [[Poster](/assets/poster/2021_ICLR_Ham_poster.png)] [[BibTeX](/assets/bib/ham.bib)]
 
 <script>
   (function () {
