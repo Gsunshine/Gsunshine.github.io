@@ -1,125 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Flow vs MeanFlow — Latent Text Generation Export</title>
-<base href="/latent-thought-demo/" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --bg: oklch(0.985 0.004 80);
-    --bg-2: oklch(0.965 0.005 80);
-    --panel: oklch(0.995 0.003 80);
-    --ink: oklch(0.18 0.012 60);
-    --ink-2: oklch(0.36 0.012 60);
-    --ink-3: oklch(0.58 0.01 60);
-    --rule: oklch(0.90 0.006 70);
-    --rule-2: oklch(0.93 0.005 70);
-    --flow: oklch(0.50 0.16 258);
-    --flow-soft: oklch(0.50 0.16 258 / 0.12);
-    --flow-tint: oklch(0.96 0.03 258);
-    --mean: oklch(0.58 0.16 38);
-    --mean-soft: oklch(0.58 0.16 38 / 0.14);
-    --mean-tint: oklch(0.96 0.03 38);
-    --target: oklch(0.45 0.10 160);
-    --noise: oklch(0.55 0.005 60);
-    --serif: "IBM Plex Serif", Georgia, serif;
-    --sans: "IBM Plex Sans", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, monospace;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); }
-  body { min-height: 100vh; font-feature-settings: "ss01", "cv11"; }
-  a { color: inherit; }
-  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-  #root { min-height: 100vh; }
-  .mono { font-family: var(--mono); font-feature-settings: "zero", "ss01"; }
-  .serif { font-family: var(--serif); }
-  .kbd {
-    display: inline-block; padding: 1px 6px; border: 1px solid var(--rule);
-    border-bottom-width: 2px; border-radius: 4px; font-family: var(--mono); font-size: 11px;
-    background: var(--bg-2); color: var(--ink-2);
-  }
-  ::selection { background: oklch(0.50 0.16 258 / 0.22); }
-
-  /* Token-swap flash — fires when a span remounts because its
-     key changed (i.e. the decoder switched the word in that
-     slot). --flash-bg / --flash-bd are set per-panel so flow
-     and meanflow flash in their own colours. */
-  @keyframes tokenFlash {
-    0%   {
-      background: var(--flash-bg, oklch(0.96 0.03 258));
-      border-color: var(--flash-bd, oklch(0.5 0.16 258));
-      box-shadow: 0 0 0 3px var(--flash-bg, oklch(0.96 0.03 258));
-      transform: translateY(-1.5px);
-    }
-    35%  {
-      background: var(--flash-bg);
-      border-color: var(--flash-bd);
-      box-shadow: 0 0 0 2px var(--flash-bg);
-      transform: translateY(0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 transparent;
-      transform: translateY(0);
-    }
-  }
-  .token-flash { animation: tokenFlash 620ms cubic-bezier(.2,.7,.3,1); }
-  @media (prefers-reduced-motion: reduce) {
-    .token-flash { animation: none; }
-  }
-
-  /* Real-sample text — word-level highlighting */
-  @keyframes realChanged {
-    0%   {
-      background: var(--accent-tint);
-      color: var(--accent);
-      box-shadow: 0 0 0 2px var(--accent-tint);
-    }
-    55%  {
-      background: var(--accent-tint);
-      color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent-tint);
-    }
-    100% {
-      background: transparent;
-      color: var(--ink);
-      box-shadow: 0 0 0 0 transparent;
-    }
-  }
-  .tok-real {
-    border-radius: 2px;
-    padding: 0 1px;
-  }
-  .tok-real.changed {
-    animation: realChanged var(--flash-dur, 1100ms) cubic-bezier(.2,.7,.3,1);
-  }
-  .tok-real.stable { color: var(--ink); }
-  .tok-sep { white-space: pre-wrap; }
-  @media (prefers-reduced-motion: reduce) {
-    .tok-real.changed { animation: none; }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
-<script type="application/json" id="speaker-notes">[]</script>
-
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<link rel="canonical" href="/demos/latent-thought/geometry/">
+<meta http-equiv="refresh" content="0; url=/demos/latent-thought/geometry/">
+<script>location.replace("/demos/latent-thought/geometry/" + location.search + location.hash);</script>
 </head>
 <body>
-<div id="root"></div>
-
-<script>window.__LT_PANEL = "geometry";</script>
-<script type="text/babel" src="samples.jsx?v=geometry-no-picker-v1"></script>
-<script type="text/babel" src="latent_pca.jsx?v=geometry-no-picker-v1"></script>
-<script type="text/babel" src="app.jsx?v=geometry-no-picker-v1"></script>
+<a href="/demos/latent-thought/geometry/">Redirecting to the latent thought geometry demo.</a>
 </body>
 </html>
