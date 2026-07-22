@@ -17,6 +17,13 @@ Full List (Chronological)
   **TL;DR**: Diagnosing and improving failure modes of fast one-step generative models. \
   [[Paper](https://arxiv.org/abs/2512.02012)] [[Code](https://github.com/Lyy-iiis/imeanflow)]
 
+- Representation Fréchet Loss for Visual Generation <span class="proj-filter" data-venue="arxiv" data-year="2026"></span> \
+  Jiawei Yang, **Zhengyang Geng**, Xuan Ju, Yonglong Tian, and Yue Wang \
+  **TL;DR**: Supervise generation where it is perceived with FD-loss. \
+  [[Paper](https://arxiv.org/abs/2604.28190)] [[Code](https://github.com/Jiawei-Yang/FD-loss)]
+
+<hr class="works-separator">
+
 - Pixel Mean Flows <span class="proj-filter" data-venue="icml" data-year="2026"></span> \
   Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, \
   <span class="pub-author-continuation">Tianhong Li, <strong>Zhengyang Geng</strong>, and Kaiming He</span> \

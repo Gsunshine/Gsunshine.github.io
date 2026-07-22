@@ -74,6 +74,13 @@ Selected Works
 <div class="works-group__content" markdown="1">
 
 <div class="works-subgroup" markdown="1">
+- Representation Fréchet Loss for Visual Generation <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=arxiv">arXiv</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
+  Jiawei Yang, **Zhengyang Geng**, Xuan Ju, Yonglong Tian, and Yue Wang <br>
+  **TL;DR**: Supervise generation where it is perceived with FD-loss. <br>
+  [[Paper](https://arxiv.org/abs/2604.28190)] [[Code](https://github.com/Jiawei-Yang/FD-loss)]
+
+<hr class="works-separator">
+
 - Pixel Mean Flows <a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?venue=icml">ICML</a><a class="pub-meta pub-meta--link" href="{{ site.baseurl }}/projects/?year=2026">2026</a> <br>
   Yiyang Lu\*, Susie Lu\*, Qiao Sun\*, Hanhong Zhao\*, Zhicheng Jiang, Xianbang Wang, <br>
   <span class="pub-author-continuation">Tianhong Li, <strong>Zhengyang Geng</strong>, and Kaiming He</span> <br>
@@ -162,6 +169,22 @@ Selected Works
 </details>
 
 <p><a class="btn btn--primary works-full-btn" href="{{ site.author.googlescholar }}">Full List (Google Scholar)</a></p>
+
+Blog Posts
+---------
+
+<div class="blog-posts">
+  <article class="blog-post">
+    <h3><a href="https://latent-thought-flows.vercel.app/">Latent Thought Flows with Text Compression</a></h3>
+    <span class="blog-post__year">2026</span>
+    <p>Compress text into continuous latents, generate them in one step, and decode them back to language.</p>
+  </article>
+  <article class="blog-post">
+    <h3><a href="https://gsunshine.notion.site/Consistency-Models-Made-Easy-954205c0b4a24c009f78719f43b419cc">Consistency Models Made Easy</a></h3>
+    <span class="blog-post__year">2024</span>
+    <p>A practical recipe for turning pretrained diffusion models into fast consistency models.</p>
+  </article>
+</div>
 
 
   
